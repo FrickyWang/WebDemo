@@ -1,19 +1,19 @@
 {
   "author": "Fricky Wang",
   "name": "gundam-app",
-  "homepage": "https://github.com/gundam-app/gundam-app",
+  "homepage": "https://github.com/FrickyWang/WebDemo",
   "version": "0.0.1-SNAPSHOT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:gundam-app/gundam-app.git"
+    "url": "git@github.com:FrickyWang/WebDemo.git"
   },
   "bugs": {
-    "url": "https://github.com/gundam-app/gundam-app/issues"
+    "url": "https://github.com/FrickyWang/WebDemo/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.github.com/gundam-app/gundam-app/master/LICENSE"
+      "url": "https://raw.github.com/FrickyWang/WebDemo/master/LICENSE"
     }
   ],
   "engines": {
