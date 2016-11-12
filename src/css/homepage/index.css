@@ -1,1 +1,165 @@
-<link type="text/css" href="vendor/bootstrap/bootstrap.css" rel="stylesheet">
+body {
+	min-width: 1170px
+}
+
+#index-header {
+	background-color: #FFF;
+	z-index: 10;
+	border-bottom: 1px solid #E4E4E4
+}
+
+#index-header .container {
+	position: relative;
+	width: 1170px!important;
+	height: 108px
+}
+
+/*header部帮助菜单布局*/
+#index-header .header-help {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	font-size: 0;
+	color: #666
+}
+
+#index-header .header-help li {
+	display: inline-block;
+	margin: 8px 0 10px;
+	padding: 0 10px;
+	list-style-type: none;
+	border-right: 1px solid #E4E4E4;
+	font-size: 14px;
+	line-height: 16px
+}
+
+#index-header .header-help li.user {
+	position: relative
+}
+
+/*用户信息样式*/
+#index-header .header-help li:first-child {
+	position: relative;
+	padding-right: 0;
+	border: none
+}
+
+/*客服专线样式*/
+#index-header .header-help li.service-number {
+	border-right: none;
+	margin-right: 4px;
+	color: #00bd8c;
+	font-size: 17px;
+	line-height: 20px /*行间距*/
+}
+
+#index-header .header-help a {
+	color: #666
+}
+
+#index-header .header-help a:hover {
+	color: #333
+}
+
+/*设置注册的字体颜色和间距（第二个child）*/
+#index-header .header-help a:first-child+a {
+	margin-left: 8px;
+	color: #f68121
+}
+
+#index-header .header-help .logged,#index-header .header-help .no-logged {
+	display: none
+}
+
+/*用户没有登录时显示*/
+#index-header.no-logged .user div:first-child+div {
+	display: block
+}
+
+#index-header.no-logged .register {
+	padding-right: 10px;
+	border-right: 1px solid #E4E4E4
+}
+/*用户登录后的显示*/
+#index-header.logged .user div:first-child {
+	display: inline-block
+}
+
+/*电话微信显示*/
+#index-header .header-help .mobile-weichat {
+	position: relative
+}
+
+/*获取微信样式图片*/
+#index-header .header-help .mobile-weichat i.index-icon-weichat {
+	display: inline-block;
+	width: 20px;
+	height: 16px;
+	background-image: url(../images/common/header-weixin.png);
+	background-image: -webkit-image-set(url(../images/common/header-weixin.png) 1x,url(../images/common/header-weixin2.png) 2x);
+	background-repeat: no-repeat;
+	vertical-align: -4px;
+	cursor: pointer /*光标为一只手*/
+}
+
+/*弹出框样式------start--------*/
+#index-header .header-help .mobile-weichat .mw-content {
+	display: none;
+	position: absolute;
+	left: 50%;
+	width: 96px;
+	height: 196px;
+	margin-left: -48px;
+	z-index: 20
+}
+
+#index-header .header-help .mobile-weichat .mw-content .mw-code {
+	margin-top: 12px;
+	padding: 7px;
+	border: 1px solid #E4E4E4;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fafafa
+}
+
+#index-header .header-help .mobile-weichat .mw-content .mw-code .triangle-inner,#index-header .header-help .mobile-weichat .mw-content .mw-code .triangle-outer {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0
+}
+
+#index-header .header-help .mobile-weichat .mw-content .mw-code .triangle-inner {
+	margin: 5px 0 0 -6px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 8px solid #fafafa
+}
+
+#index-header .header-help .mobile-weichat .mw-content .mw-code .triangle-outer {
+	margin: 4px 0 0 -7px;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 8px solid #E4E4E4
+}
+/*弹出框样式------end--------*/
+
+/*微信图片hover样式*/
+#index-header .header-help .mobile-weichat:hover .index-icon-weichat {
+	background-image: url(../images/common/header-weixin-hover.png);
+	background-image: -webkit-image-set(url(../images/common/header-weixin-hover.png) 1x,url(../images/common/header-weixin-hover2.png) 2x);
+	background-repeat: no-repeat
+}
+
+#index-header .header-help .mobile-weichat:hover .index-icon-mobile {
+	color: #00BC8D
+}
+
+#index-header .header-help .mobile-weichat:hover .mw-content {
+	display: block
+}

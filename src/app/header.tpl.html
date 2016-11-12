@@ -1,43 +1,38 @@
 <div class="container">
-    <!--<div class="navbar-inner">
-        <a class="brand" ng-click="home()">AScrum</a>
-        <ul class="nav">
-            <li ng-class="{active:isNavbarActive('projectsinfo')}"><a href="/projectsinfo">Current Projects</a></li>
-        </ul>
-
-        <ul class="nav" ng-show="isAuthenticated()">
-            <li ng-class="{active:isNavbarActive('projects')}"><a href="/projects">My Projects</a></li>
-            <li class="dropdown" ng-class="{active:isNavbarActive('admin'), open:isAdminOpen}" ng-show="isAdmin()">
-                <a id="adminmenu" role="button" class="dropdown-toggle" ng-click="isAdminOpen=!isAdminOpen">Admin<b class="caret"></b></a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="adminmenu">
-                    <li><a tabindex="-1" href="/admin/projects" ng-click="isAdminOpen=false">Manage Projects</a></li>
-                    <li><a tabindex="-1" href="/admin/users" ng-click="isAdminOpen=false">Manage Users</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="nav pull-right" ng-show="hasPendingRequests()">
-            <li class="divider-vertical"></li>
-            <li><a href="#"><img src="/static/img/spinner.gif"></a></li>
-        </ul>
-        <login-toolbar></login-toolbar>
-    </div>
-    <div>
-        <ul class="breadcrumb">
-            <li ng-repeat="breadcrumb in breadcrumbs.getAll()">
-                <span class="divider">/</span>
-                <ng-switch on="$last">
-                    <span ng-switch-when="true">{{breadcrumb.name}}</span>
-                    <span ng-switch-default><a href="{{breadcrumb.path}}">{{breadcrumb.name}}</a></span>
-                </ng-switch>
-            </li>
-        </ul>
-    </div>
-    <ul class="nav nav-tabs clearfix">-->
-      <ul class="nav nav-tabs clearfix">
-          <li><a href="">登录</a><a href="" class="">注册</a></li>
+      <ul class="header-help clearfix">
+          <li class="user">
+             <div class="logged">
+             </div>
+             <div class="no-logged">
+             <a href="">登录</a><a href="" class="register">注册</a>
+             </div>
+          </li>
           <li><a href="" target="_blank">平台数据</a></li>
           <li><a href="" target="_blank">新手指引</a></li>
           <li><a href="" target="_blank">帮助中心</a></li>
           <li><a href="" target="_blank">公告</a></li>
+          <li class="mobile-weichat">
+          <a href="" target="_blank"><i class="index-icon-mobile"></i></a>
+            <div class="mw-content">
+              <div class="space"></div>
+              <div class="mw-code">
+                <div class="triangle-outer"></div>
+                <div class="triangle-inner"></div>
+                <img src="src/css/images/common/download-app.png" width="80" height="80">
+              </div>
+            </div>
+          </li>
+
+          <li class="mobile-weichat">
+            <i class="index-icon-weichat"></i>
+            <div class="mw-content">
+              <div class="mw-code">
+                <div class="triangle-outer"></div>
+                <div class="triangle-inner"></div>
+                <img src="src/css/images/common/header-public-code.png" alt="点融网公众号" width="80" height="80">
+              </div>
+            </div>
+          </li>
+          <li class="service-number"><i class="index-icon-bold-phone"></i>客服热线：400-921-9218</li>
       </ul>
   </div>
