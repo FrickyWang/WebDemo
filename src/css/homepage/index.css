@@ -28,7 +28,7 @@ body {
 
 #index-header .header-help li {
 	display: inline-block;
-	margin: 8px 0 10px;
+	margin: 8px 0 20px;
 	padding: 0 10px;
 	list-style-type: none;
 	border-right: 1px solid #E4E4E4;
@@ -107,7 +107,7 @@ body {
 
 /*弹出框样式------start--------*/
 #index-header .header-help .mobile-weichat .mw-content {
-	display: none;
+	display: none; /*最开始不显示*/
 	position: absolute;
 	left: 50%;
 	width: 96px;
@@ -161,5 +161,104 @@ body {
 }
 
 #index-header .header-help .mobile-weichat:hover .mw-content {
-	display: block
+	display: block /*二维码显示*/
+}
+
+/*账户菜单样式------start-------*/
+#index-header .header-help .header-account-menu {
+	position: absolute;
+	padding-top: 10px;
+	right: 62px;
+	width: 174px;
+	background: #FFF;
+	z-index: 1002;
+	overflow: hidden
+}
+
+#index-header .header-help .header-account-menu li,#index-header .header-help .header-account-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+#index-header .header-help .header-account-menu ul {
+	border: 1px solid #E4E4E4;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px
+}
+
+#index-header .header-help .header-account-menu ul li {
+	width: 100%;
+	height: 36px;
+	padding: 0 5px;
+	border: none;
+	line-height: 36px;
+	text-align: center
+}
+
+#index-header .header-help .header-account-menu ul li:hover {
+	background-color: #F5F5F5
+}
+
+#index-header .header-help .header-account-menu ul li.last-item {
+	border-top: 1px solid #E4E4E4
+}
+
+#index-header .header-help .header-account-menu ul li.last-item a {
+	color: #d70c18
+}
+
+#index-header .header-help .header-account-menu ul li a {
+	color: #666;
+	font-size: 14px
+}
+/*账户菜单样式------end-------*/
+
+/*箭头图标*/
+#index-header .header-help .header-help-icon {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0 -10px;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	background-size: 100%;
+	vertical-align: -5px;
+	cursor: pointer
+}
+
+#index-header .header-help .header-help-icon.down {
+	background-image: url(../images/h5/help-center/icon-down.png)
+}
+
+#index-header .header-help .header-help-icon.up {
+	background-image: url(../images/h5/help-center/icon-up.png)
+}
+
+/*vip图标样式*/
+#index-header .header-help .vip-logo {
+	margin: 0 10px 0 0;
+	vertical-align: -2px
+}
+
+/*消息样式*/
+#index-header .header-help li.user .msg-center {
+	display: inline-block;
+	position: relative;
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+	margin-left: 10px;
+	padding: 0 12px;
+	color: #666
+}
+
+#index-header .header-help li.user .msg-center .red-dot {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 41px;
+	width: 7px;
+	height: 7px;
+	background-position: 0 8px
 }

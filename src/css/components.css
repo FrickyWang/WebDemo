@@ -716,3 +716,57 @@ a[href="javascript:void(0)"] {
 .index-icon-plus:before {
 	content: "\e6a4"
 }
+
+/*VIPͼƬ*/
+.vip-logo {
+	margin-left: 2px;
+	background: url(../css/images/common/vip-level-icon.png);
+	display: inline-block;
+	width: 21px;
+	height: 14px;
+	vertical-align: text-top
+}
+
+.vip-logo.icon-vip-v0 {
+	background-position: 0 0
+}
+
+.vip-logo.icon-vip-v1 {
+	background-position: 0 -19px
+}
+
+.vip-logo.icon-vip-v2 {
+	background-position: 0 -38px
+}
+
+.vip-logo.icon-vip-v3 {
+	background-position: 0 -57px
+}
+
+.vip-logo.icon-vip-v4 {
+	background-position: 0 -76px
+}
+
+.vip-logo.icon-vip-v5 {
+	background-position: 0 -95px
+}
+
+.vip-logo.icon-vip-v6 {
+	background-position: 0 -114px
+}
+
+.vip-logo.icon-vip-v7 {
+	background-position: 0 -133px
+}
+
+.vip-logo.icon-vip-v8 {
+	background-position: 0 -152px
+}
+
+.vip-logo.icon-vip-v9 {
+	background-position: 0 -171px
+}
+
+.vip-logo.icon-vip-v10 {
+	background-position: 0 -190px
+}
