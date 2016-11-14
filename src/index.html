@@ -9,8 +9,10 @@
     <link type="text/css" href="vendor/bootstrap/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="src/css/homepage/index.css" rel="stylesheet">
     <link type="text/css" href="src/css/components.css" rel="stylesheet">
-    <script type="text/javascript" src="vendor/angular/angular.js"></script>
-    <script type="text/javascript" src="src/app/WebDemo.js"></script>
+    <script type="text/javascript" src="vendor/require/require.min.js"></script>
+    <script type="text/javascript" src="src/app/index.app.js"></script>
+    <!--<script type="text/javascript" src="vendor/angular/angular.js"></script>-->
+    <!--<script type="text/javascript" src="src/app/WebDemo.js"></script>-->
     
     <style type="text/css">
     @font-face {
@@ -37,7 +39,7 @@
   </style>
   </head>
   <body>
-  <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-app="WebDemo" ng-controller="HeaderCtrl">
+  <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
       <div ng-include="'src/app/header.tpl.html'"></div>
   </body>
   </header>

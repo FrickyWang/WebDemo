@@ -105,17 +105,21 @@ var _requireConfig = {
     }
 };
 require.config(_requireConfig);
-require(["angular","controllers/common/main","controllers/common/header"],function(angular){
-	function webDemo() {
+require(["angular"],function(angular){
+	//angular.module('WebDemo', []);
+	//function webDemo() {
 	   var webDemo = angular.module('WebDemo', []);
-	   /*define("WebDemo", [], function() {
+	   define("WebDemo", [], function() {
 			return webDemo;
-	   });*/
-    }
+	   });
+	   require(["controllers/common/header","controllers/common/main"],function(){
+	   	   angular.bootstrap(document, ["WebDemo"])
+	   });
+//}
 });
 define("controllers/common/header", ["WebDemo"], function(WebDemo){
 	WebDemo.controller("HeaderCtrl",['$scope', function($scope){
-		$scope.isAuthenticated = true;
+		$scope.isAuthenticated = false;
 	}]);
 });
 define("controllers/common/main", ["WebDemo"], function(WebDemo){
