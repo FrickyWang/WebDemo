@@ -262,3 +262,57 @@ body {
 	height: 7px;
 	background-position: 0 8px
 }
+
+/*header导航菜单*/
+#index-header .header-nav {
+	position: absolute;
+	bottom: 0;
+	right: 15px;
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid #E4E4E4;
+	border-top: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0
+}
+
+#index-header .header-nav li {
+	float: left;
+	list-style-type: none;
+	border-left: 1px solid #E4E4E4
+}
+
+#index-header .header-nav li a {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	width: 114px;
+	height: 46px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 46px;
+	color: #333;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none
+}
+
+/*一般hover样式*/
+#index-header .header-nav li:hover a {
+	color: #00BC8D
+}
+/*被选中菜单hover样式*/
+#index-header .header-nav li.active:hover a {
+	color: #333
+}
+
+#index-header .header-nav li:first-child {
+	border-left: none
+}
+
+/*导航菜单选中时的背景色*/
+#index-footer,#index-header .header-nav li.active {
+	background-color: #E4E4E4
+}

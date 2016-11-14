@@ -25,10 +25,11 @@
                 <a href="" class="msg-center">
                   消息<span class="vip-logo red-dot ng-hide" ng-show="msgUnread"></span>
                 </a>
+                </div>
              </div>
              <div class="no-logged">
-             <a href="">登录</a><a href="" class="register">注册</a>
-             </div>
+               <a href="">登录</a><a href="" class="register">注册</a>
+           </div>
           </li>
           <li><a href="" target="_blank">平台数据</a></li>
           <li><a href="" target="_blank">新手指引</a></li>
@@ -57,5 +58,14 @@
             </div>
           </li>
           <li class="service-number"><i class="index-icon-bold-phone"></i>客服热线：400-921-9218</li>
+      </ul>
+
+      <ul class="header-nav clearfix">
+          <li ng-class="{active:isActive('/')}" class="active"><a href="/">首页</a></li>
+          <li ng-class="{active:isActive('/market') || isActive('/market/plan') || isActive('/market/dingtou')}"><a href="/market">我要投资</a></li>
+          <li ng-class="{active:isActive('/new-borrower/online-borrower')}"><a href="/new-borrower/online-borrower" target="_blank">我要借款</a></li>
+          <li ng-class="{active:isActive('/public/about')}"><a href="/public/about">关于点融</a></li>
+          <li><a href="" target="_blank">点融社区</a></li>
+          <li ng-class="{active:isActive('/account/my-account') || isActive('/account/login')}"><a ng-href="{{isAuthenticated ? '/account/my-account' : '/account/login'}}">我的账户</a></li>
       </ul>
   </div>
