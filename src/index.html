@@ -9,10 +9,39 @@
     <link type="text/css" href="vendor/bootstrap/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="src/css/homepage/index.css" rel="stylesheet">
     <link type="text/css" href="src/css/components.css" rel="stylesheet">
-    <script type="text/javascript" src="vendor/require/require.min.js"></script>
-    <script type="text/javascript" src="src/app/index.app.js"></script>
     <!--<script type="text/javascript" src="vendor/angular/angular.js"></script>-->
-    <!--<script type="text/javascript" src="src/app/WebDemo.js"></script>-->
+
+    <script type="text/javascript">
+      var WebDemoConfig = {
+        staticDomain: '',
+        scriptsBaseUrl: 'scripts',
+        additionalScripts: [],
+        devMode: false,
+        env: 'production',
+        slServicesEndpoint:'',
+        oldSiteEndpoint:'',
+        locale:'zh',
+        buildNumber:147885857,
+        enableBrowserLog: true,
+        showSecondaryForPublic:true,
+        regFormType:  2,
+        jsonFromDB:true,
+        publicKey:'',
+        customRequire:{},
+        lenderModuleEndpoint: '',
+        slAppScript:"",
+        bootstrapInsideMin:true,
+        apiPrefix: null,
+        nodeAPI: false,
+        // Brand details
+        brand:""
+      };
+      window.isLandingPage = false;
+      //scripts
+      WebDemoConfig.additionalScripts.push('homepage/homepage');
+    </script>
+    <script type="text/javascript" src="scripts/require/require.min.js"></script>
+    <script type="text/javascript" src="src/app/index.app.js"></script>
     
     <style type="text/css">
     @font-face {
@@ -38,9 +67,29 @@
     }
   </style>
   </head>
-  <body>
+  <body ng-controller="MainCtrl">
   <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
       <div ng-include="'src/app/header.tpl.html'"></div>
-  </body>
   </header>
+
+  <div class="homepage-wrapper" ng-controller="homeContextCtrl">
+    <div class="banner">
+      <div class="main-banner">
+        <dl>
+          <dt>为何百万用户选择点融？</dt>
+          <dd><span class="checkbox-icon"></span>投资极度分散</dd>
+          <dd><span class="checkbox-icon"></span>利息自动复投</dd>
+          <dd><span class="checkbox-icon"></span>天天付息</dd>
+          <dd class="long"><span class="checkbox-icon"></span>期限灵活，随时转让</dd>
+          <dd><span class="checkbox-icon"></span>安全透明</dd>
+        </dl>
+        <a class="register" href="">立即注册</a>
+        <span class="advert-cue">广告</span>
+      </div>
+
+      <a href="" class="market-banner"></a>
+
+    </div>
+  </div>
+  </body>
   </html>

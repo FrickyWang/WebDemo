@@ -1,5 +1,5 @@
 var _requireConfig = {
-	baseUrl: "vendor",
+	baseUrl: WebDemoConfig.staticDomain + WebDemoConfig.scriptsBaseUrl,
 	paths: {
 		angular: "angular/angular",
 		jquery: "jquery/jquery"
@@ -105,23 +105,46 @@ var _requireConfig = {
     }
 };
 require.config(_requireConfig);
+window.WebDemoConfigDefaultDeps = [];
 require(["angular"],function(angular){
-	//angular.module('WebDemo', []);
 	//function webDemo() {
 	   var webDemo = angular.module('WebDemo', []);
 	   define("WebDemo", [], function() {
 			return webDemo;
 	   });
-	   require(["controllers/common/header","controllers/common/main"],function(){
-	   	   angular.bootstrap(document, ["WebDemo"])
-	   });
+	   _addScriptsAndBootstrap(["controllers/common/header","controllers/common/main"], angular);
+	   
+	   function _addScriptsAndBootstrap(deps, angular) {
+	      _addMoreCommonScripts(deps);
+	      _bootstrapSLApp(angular);
+       }
+           
+       function _addMoreCommonScripts(deps) {
+	      if (deps && deps.length > 0) {
+	      	  window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(deps);
+	      }
+	      if ("undefined" != typeof WebDemoConfig.additionalScripts) {
+	      	  window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(WebDemoConfig.additionalScripts);
+	      }
+       }
+       function _bootstrapSLApp(angular) {
+	      require(window.WebDemoConfigDefaultDeps, function() {
+		      angular.bootstrap(document, ["WebDemo"]);
+		      console.log("WebDemo app initialized :)");
+	      });
+       }
 //}
 });
 define("controllers/common/header", ["WebDemo"], function(WebDemo){
-	WebDemo.controller("HeaderCtrl",['$scope', function($scope){
-		$scope.isAuthenticated = false;
+	WebDemo.controller("HeaderCtrl",["$scope", function($scope){
+		$scope.isAuthenticated = true;
 	}]);
 });
 define("controllers/common/main", ["WebDemo"], function(WebDemo){
-	WebDemo.controller("MainCtrl",['$scope', function($scope){}]);
+	WebDemo.controller("MainCtrl",["$scope", function($scope){
+		$scope.isActive = function(path) {
+			var tmplocal = location.pathname || "/";
+			return path === tmplocal;
+		}
+	}]);
 });
