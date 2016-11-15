@@ -462,8 +462,9 @@ body {
 	text-align: center
 }
 
+/*广告样式*/
 .homepage-wrapper .banner .main-banner .advert-cue {
-	line-height: 1;
+	line-height: 1; /*行高*/
 	font-size: 12px;
 	color: #999;
 	position: absolute;
