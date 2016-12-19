@@ -1,0 +1,32 @@
+{
+  "author": "Fricky Wang",
+  "name": "WebDemo",
+  "homepage": "https://github.com/FrickyWang/WebDemo",
+  "version": "0.0.1-SNAPSHOT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FrickyWang/WebDemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FrickyWang/WebDemo/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/FrickyWang/WebDemo/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt" : "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-requirejs": "*"
+  }
+}

@@ -1,0 +1,182 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="WebDemo">
+    <meta name="keywords" content="WebDemo, 学习AngularJs, 学习BootStrap">
+    <link type="text/css" href="static/tp/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/styles/homepage/index.css" rel="stylesheet">
+    <link type="text/css" href="static/styles/components.css" rel="stylesheet">
+    <!--<script type="text/javascript" src="vendor/angular/angular.js"></script>-->
+
+    <script type="text/javascript">
+      var WebDemoConfig = {
+        staticDomain: '',
+        scriptsBaseUrl: 'static/scripts',
+        additionalScripts: [],
+        devMode: false,
+        env: 'production',
+        slServicesEndpoint:'',
+        oldSiteEndpoint:'',
+        locale:'zh',
+        buildNumber:147885857,
+        enableBrowserLog: true,
+        showSecondaryForPublic:true,
+        regFormType:  2,
+        jsonFromDB:true,
+        publicKey:'',
+        customRequire:{},
+        lenderModuleEndpoint: '',
+        slAppScript:"",
+        bootstrapInsideMin:true,
+        apiPrefix: null,
+        nodeAPI: false,
+        // Brand details
+        brand:""
+      };
+      window.isLandingPage = false;
+      //scripts
+      WebDemoConfig.additionalScripts.push('homepage/homepage');
+    </script>
+    <script type="text/javascript" src="static/tp/require/require.min.js"></script>
+    <script type="text/javascript" src="static/scripts/index.js"></script>
+    
+    <style type="text/css">
+    @font-face {
+      font-family: 'proxima-nova';
+      src: url(static/styles/fonts/proximanova/proximanova-regular-webfont.eot);
+      src: url(static/styles/fonts/proximanova/proximanova-regular-webfont.eot?#iefix) format('embedded-opentype'),
+        url(static/styles/fonts/proximanova/proximanova-regular-webfont.woff) format('woff'),
+        url(static/styles/fonts/proximanova/proximanova-regular-webfont.ttf) format('truetype'),
+        url(static/styles/fonts/proximanova/proximanova-regular-webfont.svg#proxima_nova_rgregular) format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'proxima-nova';
+      src: url(static/styles/fonts/proximanova/proximanova-bold-webfont.eot);
+      src: url(static/styles/fonts/proximanova/proximanova-bold-webfont.eot?#iefix) format('embedded-opentype'),
+        url(static/styles/fonts/proximanova/proximanova-bold-webfont.woff) format('woff'),
+        url(static/styles/fonts/proximanova/proximanova-bold-webfont.ttf) format('truetype'),
+        url(static/styles/fonts/proximanova/proximanova-bold-webfont.svg#proxima_nova_rgbold) format('svg');
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+  </head>
+  <body ng-controller="MainCtrl">
+  <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
+      <div ng-include="'templet/header.tpl.html'"></div>
+  </header>
+
+  <div class="homepage-wrapper" ng-controller="homeContextCtrl">
+    <div class="banner">
+      <div class="main-banner">
+        <dl>
+          <dt>为何百万用户选择点融？</dt>
+          <dd><span class="checkbox-icon"></span>投资极度分散</dd>
+          <dd><span class="checkbox-icon"></span>利息自动复投</dd>
+          <dd><span class="checkbox-icon"></span>天天付息</dd>
+          <dd class="long"><span class="checkbox-icon"></span>期限灵活，随时转让</dd>
+          <dd><span class="checkbox-icon"></span>安全透明</dd>
+        </dl>
+        <a class="register" href="">立即注册</a>
+        <span class="advert-cue">广告</span>
+      </div>
+
+      <a href="" class="market-banner"></a>
+    </div>
+
+    <div class="internet-finance container">
+      <div class="main-wrapper">
+        <h3>点融网是谁？</h3>
+        <p>点融网是获渣打直接投资公司和老虎环球基金融资的互联网金融公司（C轮融资获2亿美金），由纽交所上市公司Lending Club联合创始人苏海德（Soul Htite）与资深金融法律师郭宇航创办，致力于用先进互联网技术和金融创新使投资与借贷更透明、更高效。创新理财项目“团团赚”专注于有保障的资产，让投资人轻松理财。</p>
+      </div>
+      <a href="" target="_blank">
+        <ul class="sidebar">
+          <li class="risk-manage"><span class="icon"></span>严密的风控管理系统</li>
+          <li class="tech"><span class="icon"></span>先进雄厚的独家技术</li>
+          <li class="security"><span class="icon"></span>投资安全由法律保障</li>
+        </ul>
+      </a>
+    </div>
+
+    <div class="favorite-product container">
+    <div class="main-wrapper">
+      <h3>明星产品 - 团团赚<a target="_blank" href=""><span class="play-icon"></span>播放团团赚介绍视频</a></h3>
+
+      <ul class="plan-list clearfix">
+        <li class="clearfix" ng-cloak ng-repeat="plan in plans">
+          <div class="plan-name">
+            <i class="plan-img" ng-style="{'background-color': plan.planColor}"></i><a ng-href="{{'/market/plan?planId=' + plan.loanId}}">{{plan.simpleName}}</a>
+          </div>
+
+          <div class="plan-rate right-border">
+            <!--<p>{{ plan | planIntRate }}<small>%</small></p>-->
+            <p>{{ plan.interestDownLimit }}<small>%</small></p>
+            <p>历史年化收益率</p>
+          </div>
+
+          <div class="plan-amount right-border">
+            <p>{{plan.minInvestAmount | number}}<small>元</small></p>
+            <p>起投金额</p>
+          </div>
+
+          <div class="plan-members">
+            <p>{{plan.memberNum | number}}<small>人次</small></p>
+            <p>累计入团</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="invest-now clearfix">
+        <span>
+          “团团赚” 实现投资极度分散 , 天天付息，利息自动复投，且期限灵活 , 随时转让。
+        </span>
+        <a href="https://www.dianrong.com/market">我要投资</a>
+      </div>
+    </div>
+
+    <div class="other-plan sidebar">
+      <h3>所有团产品<a href="https://www.dianrong.com/market">查看更多  &gt;</a></h3>
+      <ul class="simple-plan-list">
+        <!-- ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
+          <div class="plan-name"><a ng-href="/market/plan?planId=185001" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=185001">新手团</a></div><!--
+       --><div class="plan-rate ng-binding">10 %</div><!--
+       --><div class="plan-text">历史年化收益率</div>
+        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
+          <div class="plan-name"><a ng-href="/market/plan?planId=340401" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=340401">节节发</a></div><!--
+       --><div class="plan-rate ng-binding">4.5-8 %</div><!--
+       --><div class="plan-text">历史年化收益率</div>
+        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
+          <div class="plan-name"><a ng-href="/market/plan?planId=68201" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=68201">经典团</a></div><!--
+       --><div class="plan-rate ng-binding">7 %</div><!--
+       --><div class="plan-text">历史年化收益率</div>
+        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
+          <div class="plan-name"><a ng-href="/market/plan?planId=267601" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=267601">季季翻</a></div><!--
+       --><div class="plan-rate ng-binding">8 %</div><!--
+       --><div class="plan-text">历史年化收益率</div>
+        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
+          <div class="plan-name"><a ng-href="/market/plan?planId=402458" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=402458">月月盈</a></div><!--
+       --><div class="plan-rate ng-binding">7.2 %</div><!--
+       --><div class="plan-text">历史年化收益率</div>
+        </li><!-- end ngRepeat: oplan in otherPlans -->       
+      </ul>
+    </div>
+
+    <div class="more-info clearfix">
+      <div class="contact-us"><i class="service-avatar"></i>想了解更多详情，可拨打<i class="sl-icon-bold-phone"></i>400-921-9218</div>
+      <div class="more-art">
+        <a class="faq" href="https://www.dianrong.com/public/help-center" target="_blank">热门的10个问题</a>
+        <a class="media" href="http://forum.dianrong.com/" target="_blank">点融社区求助</a>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  </body>
+  </html>

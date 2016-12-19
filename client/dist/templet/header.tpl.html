@@ -1,0 +1,71 @@
+<div class="container">
+      <ul class="header-help clearfix">
+          <li class="user">
+             <div class="logged">
+               <div ng-mouseenter="showMenu = true" ng-mouseleave="showMenu = false">
+                <a>你好！Member_15885807</a>
+                <!--<a href="" class="user-info">
+                  你好！
+                  <span ng-bind="profile.username" class="ng-binding"></span>
+                </a>-->
+                <a href="1" target="_blank">
+                  <!--<span id="vip-header-logo" class="vip-logo icon-vip-v{{profile.vipLevel}}"></span>-->
+                  <span id="vip-header-logo" class="vip-logo icon-vip-v0"></span>
+                </a>
+                <i class="header-help-icon down" ng-class="{up:showMenu}"></i>
+                <div class="header-account-menu" ng-show="showMenu">
+                  <ul class="clearfix">
+                    <li><a href="">账户总览</a></li>
+                    <li><a href="">团团赚管理</a></li>
+                    <li><a href="">交易记录</a></li>
+                    <li><a href="">充值提现</a></li>
+                    <li class="last-item"><a href="https://www.dianrong.com/?referredBy=m_BL001&utm_source=bpz&utm_medium=sem&utm_campaign=2per&utm_term=title#" class="logout" ng-click="logout()">安全退出</a></li>
+                  </ul>
+                </div>
+                <a href="" class="msg-center">
+                  消息<span class="vip-logo red-dot ng-hide" ng-show="msgUnread"></span>
+                </a>
+                </div>
+             </div>
+             <div class="no-logged">
+               <a href="">登录</a><a href="" class="register">注册</a>
+           </div>
+          </li>
+          <li><a href="" target="_blank">平台数据</a></li>
+          <li><a href="" target="_blank">新手指引</a></li>
+          <li><a href="" target="_blank">帮助中心</a></li>
+          <li><a href="" target="_blank">公告</a></li>
+          <li class="mobile-weichat">
+            <a href="" target="_blank"><i class="index-icon-mobile"></i></a>
+            <div class="mw-content">
+              <div class="space"></div>
+              <div class="mw-code">
+                <div class="triangle-outer"></div>
+                <div class="triangle-inner"></div>
+                <img src="static/styles/images/common/download-app.png" width="80" height="80">
+              </div>
+            </div>
+          </li>
+
+          <li class="mobile-weichat">
+            <i class="index-icon-weichat"></i>
+            <div class="mw-content">
+              <div class="mw-code">
+                <div class="triangle-outer"></div>
+                <div class="triangle-inner"></div>
+                <img src="static/styles/images/common/header-public-code.png" alt="点融网公众号" width="80" height="80">
+              </div>
+            </div>
+          </li>
+          <li class="service-number"><i class="index-icon-bold-phone"></i>客服热线：400-921-9218</li>
+      </ul>
+
+      <ul class="header-nav clearfix">
+          <li ng-class="{active:isActive('/')}" class="active"><a href="/">首页</a></li>
+          <li ng-class="{active:isActive('/market') || isActive('/market/plan') || isActive('/market/dingtou')}"><a href="/market">我要投资</a></li>
+          <li ng-class="{active:isActive('/new-borrower/online-borrower')}"><a href="/new-borrower/online-borrower" target="_blank">我要借款</a></li>
+          <li ng-class="{active:isActive('/public/about')}"><a href="/public/about">关于点融</a></li>
+          <li><a href="" target="_blank">点融社区</a></li>
+          <li ng-class="{active:isActive('/account/my-account') || isActive('/account/login')}"><a ng-href="{{isAuthenticated ? '/account/my-account' : '/account/login'}}">我的账户</a></li>
+      </ul>
+  </div>
