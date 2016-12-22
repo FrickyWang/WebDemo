@@ -5,14 +5,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var log4js = require('./logJs/log');
-//var log4js = require('./logJs/log');
 
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
+var log = require('./logJs/logApp');
 var routes = require('./routes/restful_plans');
 
 var app = express();
+// 记录客户端的请求信息
+log.use(app);
+
+// 跨域访问设置
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -22,7 +23,7 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-// view engine setup //app.set('views', path.join(__dirname, 'views')); //app.set('view engine', 'ejs');
+// 设置使用html模板
 app.set('views', path.join(__dirname, 'app'));
 app.engine('html', ejs.__express); 
 app.set('view engine', 'html');

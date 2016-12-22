@@ -1,6 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose=require('../common/lib/mongdbUtils.js');
 var Schema = mongoose.Schema;
-mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 var PlansSchema = new Schema({
     loanId: {type: Number, min: 1},

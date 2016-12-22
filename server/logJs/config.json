@@ -1,0 +1,17 @@
+{ 
+  "appenders": [
+    {
+      "type": "console"
+    },{
+      "category" : "logApp",
+      "type": "dateFile",
+      "filename": "logs/ap/log",
+      "pattern": "-yyyyMMdd.log",
+      "alwaysIncludePattern": true,
+      "maxLongSize":"1024",
+      "backup":"4"
+    }
+  ],
+  "replaceConsole":true,
+  "levels":{"logApp":"DEBUG"}
+}

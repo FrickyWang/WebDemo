@@ -54,7 +54,7 @@ module.exports = function (grunt) {
       //},
       //less: ['src/less/stylesheet.less'], // recess:build doesn't accept ** in its file patterns
       //lessWatch: ['src/less/**/*.less']
-      //staticJsCss : ['vendor/*']
+      //deploy : ['D:/apache-tomcat/webapps']
     },
     clean: {
       cleanAll : ['<%= distdir %>/*'],
@@ -76,6 +76,9 @@ module.exports = function (grunt) {
       },
       templet:{
       	files: [{ dest: '<%= distdir %>', src : 'templet/*', expand: true, cwd: 'src/app' }]
+      },
+      tomcat: {
+      	files:[{ dest: 'D:/apache-tomcat/webapps', src : 'dist/**', expand: true, cwd: '' }]
       }
     },
     requirejs:{

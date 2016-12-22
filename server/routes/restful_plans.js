@@ -1,12 +1,12 @@
 var Plans = require('../models/plans.js');
-var log4js = require('../logJs/log');
+var log = require('../logJs/logApp');
 //var express = require('express');
 //var router = express.Router();
-var log=log4js.getLogger();
 
 // ап╠М
 exports.list = function (req, res) {
     Plans.find({}, function (err, doc) {
+        log.writeDebug(doc);
         res.json(doc);
     });
 };
