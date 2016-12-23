@@ -1,4 +1,4 @@
-// ¼ÓÃÜ´«Êä
+ï»¿// åŠ å¯†ä¼ è¾“
 define(["angular", "jsencrypt"], function(angular, jsencrypt) {
 	
 	function crypto(CryptoConfig) {
@@ -7,7 +7,7 @@ define(["angular", "jsencrypt"], function(angular, jsencrypt) {
 	var cryptoConfig = {
 		publicKey: void 0
 	}
-	// ÊÇ·ñĞèÒª¼ÓÃÜ
+	// æ˜¯å¦éœ€è¦åŠ å¯†
 	crypto.prototype.enabled = function() {
 		if (this.config.publicKey) {
 			return true;
@@ -15,7 +15,7 @@ define(["angular", "jsencrypt"], function(angular, jsencrypt) {
 			return false;
 		}
 	}
-	// ²ÎÊı¼ÓÃÜºó·µ»Ø
+	// å‚æ•°åŠ å¯†åè¿”å›
 	crypto.prototype.encrypt = function(param) {
 		if (this.config.publicKey) {
 			var jcrypt = new jsencrypt();
@@ -24,7 +24,7 @@ define(["angular", "jsencrypt"], function(angular, jsencrypt) {
 		}
 		return param;
 	}
-	// ·ÀÖ¹js mini»¯Ê±¸Ä±ä±äÁ¿Ãû³Æ£¬Í¨¹ıÕâÖÖ·½Ê½×¢Èë±äÁ¿
+	// é˜²æ­¢js miniåŒ–æ—¶æ”¹å˜å˜é‡åç§°ï¼Œé€šè¿‡è¿™ç§æ–¹å¼æ³¨å…¥å˜é‡
 	crypto.$inject = ["CryptoConfig"];
 	
 	return {

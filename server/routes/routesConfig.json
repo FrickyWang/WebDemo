@@ -1,0 +1,9 @@
+{
+  "routes":[
+    {
+      "url":"/feapi/plans",
+      "entityUrl":"../models/plans.js",
+      "method":"list"
+    }
+   ]
+}

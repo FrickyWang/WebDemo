@@ -1,4 +1,4 @@
-@charset "UTF-8";
+锘緻charset "UTF-8";
 
 body {
 	font-family: proxima-nova,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Wenquanyi Micro Hei","WenQuanYi Micro Hei Mono","WenQuanYi Zen Hei","WenQuanYi Zen Hei","Apple LiGothic Medium",SimHei,"ST Heiti","WenQuanYi Zen Hei Sharp";
@@ -11,13 +11,13 @@ body {
 
 a {
 	color: #00bc8d;
-	text-decoration: none; /*文本样式 穿过文本的一条线*/
-	-webkit-transition: .25s; /*动画效果展示时间*/
+	text-decoration: none; /*鏂囨湰鏍峰紡 绌胯繃鏂囨湰鐨勪竴鏉＄嚎*/
+	-webkit-transition: .25s; /*鍔ㄧ敾鏁堟灉灞曠ず鏃堕棿*/
 	-moz-transition: .25s;
 	transition: .25s
 }
 
-/*链接标签不显示下划线*/
+/*閾炬帴鏍囩涓嶆樉绀轰笅鍒掔嚎*/
 a:focus,a:hover {
 	color: #40cdaa;
 	text-decoration: none
@@ -31,7 +31,7 @@ a[href="javascript:void(0)"] {
 	border-radius: 6px
 }
 
-/*icon图标样式*/
+/*icon鍥炬爣鏍峰紡*/
 .img-comment {
 	font-size: 15px;
 	font-style: italic;
@@ -717,7 +717,7 @@ a[href="javascript:void(0)"] {
 	content: "\e6a4"
 }
 
-/*VIP图片*/
+/*VIP鍥剧墖*/
 .vip-logo {
 	margin-left: 2px;
 	background: url(images/common/vip-level-icon.png);

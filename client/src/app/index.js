@@ -1,4 +1,4 @@
-var _requireConfig = {
+锘縱ar _requireConfig = {
 	baseUrl: WebDemoConfig.staticDomain + WebDemoConfig.scriptsBaseUrl,
 	paths: {
 		angular: "../tp/angular/angular.min",
@@ -142,7 +142,7 @@ require(["angular","models/index"],function(angular){
        }
        function _bootstrapSLApp(angular) {
 	      require(window.WebDemoConfigDefaultDeps, function() {
-	      	  // 手动加载模块
+	      	  // 鎵嬪姩鍔犺浇妯″潡
 		      angular.bootstrap(document, ["WebDemo"]);
 		      console.log("WebDemo app initialized :)");
 	      });

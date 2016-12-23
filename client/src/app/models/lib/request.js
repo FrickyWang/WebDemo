@@ -1,4 +1,4 @@
-define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, codec) {
+锘縟efine(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, codec) {
 	
 	function request($http, $q, Crypto) {
 		this.$http = $http, this.$q = $q, this.crypto = Crypto;
@@ -16,7 +16,7 @@ define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, c
 		});
 	}
 	
-	//get方法
+	//get鏂规硶
 	request.prototype.get = function(url, params, padParams) {
 		var eParams = angular.extend({
 			method: "GET",
@@ -25,7 +25,7 @@ define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, c
 		}, padParams);
 		return this.emit(eParams);
 	}
-	// jsonp方法
+	// jsonp鏂规硶
 	request.prototype.jsonp = function(url, params, padParams) {
 		var tmpParams = angular.extend(params, {
 			callback: "JSON_CALLBACK"
@@ -37,7 +37,7 @@ define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, c
 		}, padParams);
 		return this.emit(eParams);
 	}
-	// post方法
+	// post鏂规硶
 	request.prototype.post = function(url, params, padParams) {
 		var strParams = '';
 		if (params) {
@@ -56,7 +56,7 @@ define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, c
 		}, padParams);
 		return this.emit(eParams);
 	}	
-	// 参数加密
+	// 鍙傛暟鍔犲瘑
 	request.prototype.encryptParams = function(params, encryptParams) {
 		var crypto = this.crypto;
 		var tmpParams = angular.extend({}, params);
@@ -76,7 +76,7 @@ define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, c
 		tmpParams.encryptedParam = tmpArray.join(";");
 		return tmpParams;
 	}
-	// 防止js mini化时改变变量名称，通过这种方式注入变量
+	// 闃叉js mini鍖栨椂鏀瑰彉鍙橀噺鍚嶇О锛岄�氳繃杩欑鏂瑰紡娉ㄥ叆鍙橀噺
 	request.$inject = ["$http", "$q", "Crypto"];
 	
 	return request;

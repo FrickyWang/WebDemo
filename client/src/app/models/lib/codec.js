@@ -1,6 +1,6 @@
-// ºº×Ö×ª»»
+ï»¿// æ±‰å­—è½¬æ¢
 define([], function() {
-	// ´øÓĞºº×ÖµÄ²ÎÊı×ª»»ÎªURI¸ñÊ½
+	// å¸¦æœ‰æ±‰å­—çš„å‚æ•°è½¬æ¢ä¸ºURIæ ¼å¼
 	var encode = function(encode) {
 		var  tmpArray = [];
 		for (var property in encode) {
@@ -10,7 +10,7 @@ define([], function() {
 		}
 		return tmpArray.join("&")
     };
-    // URI¸ñÊ½×ª»»Îªºº×Ö
+    // URIæ ¼å¼è½¬æ¢ä¸ºæ±‰å­—
     var decode = function(encode) {
     	    var index;
     	    var name;

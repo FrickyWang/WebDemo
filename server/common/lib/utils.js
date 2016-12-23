@@ -1,15 +1,15 @@
-var fs=require('fs');
+ï»¿var fs=require('fs');
 var utils = {};
 module.exports = utils;
 
-// Â·¾¶check·½·¨
+// è·¯å¾„checkæ–¹æ³•
 utils.dirCheck = function(dir){
 	if (!fs.existsSync(dir)) {
 		fs.mkdirSync(dir);
 	}
 }
 
-// ¿ÕÅÐ¶Ï
+// ç©ºåˆ¤æ–­
 utils.isEmpty = function(obj){
 	if (typeof (obj) == 'undefined' || obj == null || obj === '') {
 		return true;

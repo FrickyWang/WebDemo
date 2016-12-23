@@ -1,4 +1,4 @@
-//从高到低ERROR,WARN,INFO,DEBUG
+﻿//从高到低ERROR,WARN,INFO,DEBUG
 var log4js=require('log4js');
 var fs=require('fs');
 var config=require('./config.json');
@@ -23,7 +23,7 @@ var logApp=log4js.getLogger('logApp');
 
 // info日志
 log4js.writeInfo = function(msg){
-	if (msg == null){
+	if (utils.isEmpty(msg)){
 		msg = "";
 	}
 	logApp.info(msg);
@@ -31,7 +31,7 @@ log4js.writeInfo = function(msg){
 
 // bug日志
 log4js.writeDebug = function(msg){
-	if (msg == null){
+	if (utils.isEmpty(msg)){
 		msg = "";
 	}
 	logApp.debug(msg);
@@ -39,7 +39,7 @@ log4js.writeDebug = function(msg){
 
 // warn日志
 log4js.writeWarn = function(msg){
-	if (msg == null){
+	if (utils.isEmpty(msg)){
 		msg = "";
 	}
 	logApp.warn(msg);
@@ -47,7 +47,7 @@ log4js.writeWarn = function(msg){
 
 // error日志
 log4js.writeError = function(msg){
-	if (msg == null){
+	if (utils.isEmpty(msg)){
 		msg = "";
 	}
 	logApp.error(msg);

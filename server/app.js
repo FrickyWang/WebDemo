@@ -1,4 +1,4 @@
-var express = require('express');
+ï»¿var express = require('express');
 var path = require('path');
 var ejs = require('ejs');
 var favicon = require('serve-favicon');
@@ -7,13 +7,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var log = require('./logJs/logApp');
-var routes = require('./routes/restful_plans');
+//var routes = require('./routes/restful_plans');
+var routeIndex = require('./routes/routeIndex');
 
 var app = express();
-// ¼ÇÂ¼¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+// è®°å½•å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 log.use(app);
 
-// ¿çÓò·ÃÎÊÉèÖÃ
+// è·¨åŸŸè®¿é—®è®¾ç½®
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -23,7 +24,7 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-// ÉèÖÃÊ¹ÓÃhtmlÄ£°å
+// è®¾ç½®ä½¿ç”¨htmlæ¨¡æ¿
 app.set('views', path.join(__dirname, 'app'));
 app.engine('html', ejs.__express); 
 app.set('view engine', 'html');
@@ -38,8 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', routes);
 //app.use('/users', users);
-app.get('/feapi/plans', routes.list);
-app.get('/recipe/:id', routes.detail);
+//app.get('/feapi/plans', routes.list);
+//app.get('/recipe/:id', routes.detail);
+// è·¯ç”±åˆ¤æ–­
+app.use(function(req, res, next) {
+	log.writeDebug(req.originalUrl);
+	routeIndex.parseUrl(req.originalUrl, req, res)
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

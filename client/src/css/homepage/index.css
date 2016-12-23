@@ -1,4 +1,4 @@
-body {
+ï»¿body {
 	min-width: 1170px
 }
 
@@ -14,7 +14,7 @@ body {
 	height: 108px
 }
 
-/*header²¿°ïÖú²Ëµ¥²¼¾Ö*/
+/*headeréƒ¨å¸®åŠ©èœå•å¸ƒå±€*/
 #index-header .header-help {
 	position: absolute;
 	top: 0;
@@ -40,20 +40,20 @@ body {
 	position: relative
 }
 
-/*ÓÃ»§ĞÅÏ¢ÑùÊ½*/
+/*ç”¨æˆ·ä¿¡æ¯æ ·å¼*/
 #index-header .header-help li:first-child {
 	position: relative;
 	padding-right: 0;
 	border: none
 }
 
-/*¿Í·ş×¨ÏßÑùÊ½*/
+/*å®¢æœä¸“çº¿æ ·å¼*/
 #index-header .header-help li.service-number {
 	border-right: none;
 	margin-right: 4px;
 	color: #00bd8c;
 	font-size: 17px;
-	line-height: 20px /*ĞĞ¼ä¾à*/
+	line-height: 20px /*è¡Œé—´è·*/
 }
 
 #index-header .header-help a {
@@ -64,7 +64,7 @@ body {
 	color: #333
 }
 
-/*ÉèÖÃ×¢²áµÄ×ÖÌåÑÕÉ«ºÍ¼ä¾à£¨µÚ¶ş¸öchild£©*/
+/*è®¾ç½®æ³¨å†Œçš„å­—ä½“é¢œè‰²å’Œé—´è·ï¼ˆç¬¬äºŒä¸ªchildï¼‰*/
 #index-header .header-help a:first-child+a {
 	margin-left: 8px;
 	color: #f68121
@@ -74,7 +74,7 @@ body {
 	display: none
 }
 
-/*ÓÃ»§Ã»ÓĞµÇÂ¼Ê±ÏÔÊ¾*/
+/*ç”¨æˆ·æ²¡æœ‰ç™»å½•æ—¶æ˜¾ç¤º*/
 #index-header.no-logged .user div:first-child+div {
 	display: block
 }
@@ -83,17 +83,17 @@ body {
 	padding-right: 10px;
 	border-right: 1px solid #E4E4E4
 }
-/*ÓÃ»§µÇÂ¼ºóµÄÏÔÊ¾*/
+/*ç”¨æˆ·ç™»å½•åçš„æ˜¾ç¤º*/
 #index-header.logged .user div:first-child {
 	display: inline-block
 }
 
-/*µç»°Î¢ĞÅÏÔÊ¾*/
+/*ç”µè¯å¾®ä¿¡æ˜¾ç¤º*/
 #index-header .header-help .mobile-weichat {
 	position: relative
 }
 
-/*»ñÈ¡Î¢ĞÅÑùÊ½Í¼Æ¬*/
+/*è·å–å¾®ä¿¡æ ·å¼å›¾ç‰‡*/
 #index-header .header-help .mobile-weichat i.index-icon-weichat {
 	display: inline-block;
 	width: 20px;
@@ -102,12 +102,12 @@ body {
 	background-image: -webkit-image-set(url(../images/common/header-weixin.png) 1x,url(../images/common/header-weixin2.png) 2x);
 	background-repeat: no-repeat;
 	vertical-align: -4px;
-	cursor: pointer /*¹â±êÎªÒ»Ö»ÊÖ*/
+	cursor: pointer /*å…‰æ ‡ä¸ºä¸€åªæ‰‹*/
 }
 
-/*µ¯³ö¿òÑùÊ½------start--------*/
+/*å¼¹å‡ºæ¡†æ ·å¼------start--------*/
 #index-header .header-help .mobile-weichat .mw-content {
-	display: none; /*×î¿ªÊ¼²»ÏÔÊ¾*/
+	display: none; /*æœ€å¼€å§‹ä¸æ˜¾ç¤º*/
 	position: absolute;
 	left: 50%;
 	width: 96px;
@@ -147,9 +147,9 @@ body {
 	border-right: 7px solid transparent;
 	border-bottom: 8px solid #E4E4E4
 }
-/*µ¯³ö¿òÑùÊ½------end--------*/
+/*å¼¹å‡ºæ¡†æ ·å¼------end--------*/
 
-/*Î¢ĞÅÍ¼Æ¬hoverÑùÊ½*/
+/*å¾®ä¿¡å›¾ç‰‡hoveræ ·å¼*/
 #index-header .header-help .mobile-weichat:hover .index-icon-weichat {
 	background-image: url(../images/common/header-weixin-hover.png);
 	background-image: -webkit-image-set(url(../images/common/header-weixin-hover.png) 1x,url(../images/common/header-weixin-hover2.png) 2x);
@@ -161,10 +161,10 @@ body {
 }
 
 #index-header .header-help .mobile-weichat:hover .mw-content {
-	display: block /*¶şÎ¬ÂëÏÔÊ¾*/
+	display: block /*äºŒç»´ç æ˜¾ç¤º*/
 }
 
-/*ÕË»§²Ëµ¥ÑùÊ½------start-------*/
+/*è´¦æˆ·èœå•æ ·å¼------start-------*/
 #index-header .header-help .header-account-menu {
 	position: absolute;
 	padding-top: 10px;
@@ -213,9 +213,9 @@ body {
 	color: #666;
 	font-size: 14px
 }
-/*ÕË»§²Ëµ¥ÑùÊ½------end-------*/
+/*è´¦æˆ·èœå•æ ·å¼------end-------*/
 
-/*¼ıÍ·Í¼±ê*/
+/*ç®­å¤´å›¾æ ‡*/
 #index-header .header-help .header-help-icon {
 	display: inline-block;
 	width: 20px;
@@ -236,13 +236,13 @@ body {
 	background-image: url(../images/h5/help-center/icon-up.png)
 }
 
-/*vipÍ¼±êÑùÊ½*/
+/*vipå›¾æ ‡æ ·å¼*/
 #index-header .header-help .vip-logo {
 	margin: 0 10px 0 0;
 	vertical-align: -2px
 }
 
-/*ÏûÏ¢ÑùÊ½*/
+/*æ¶ˆæ¯æ ·å¼*/
 #index-header .header-help li.user .msg-center {
 	display: inline-block;
 	position: relative;
@@ -263,7 +263,7 @@ body {
 	background-position: 0 8px
 }
 
-/*headerµ¼º½²Ëµ¥*/
+/*headerå¯¼èˆªèœå•*/
 #index-header .header-nav {
 	position: absolute;
 	bottom: 0;
@@ -299,11 +299,11 @@ body {
 	transition: none
 }
 
-/*Ò»°ãhoverÑùÊ½*/
+/*ä¸€èˆ¬hoveræ ·å¼*/
 #index-header .header-nav li:hover a {
 	color: #00BC8D
 }
-/*±»Ñ¡ÖĞ²Ëµ¥hoverÑùÊ½*/
+/*è¢«é€‰ä¸­èœå•hoveræ ·å¼*/
 #index-header .header-nav li.active:hover a {
 	color: #333
 }
@@ -312,12 +312,12 @@ body {
 	border-left: none
 }
 
-/*µ¼º½²Ëµ¥Ñ¡ÖĞÊ±µÄ±³¾°É«*/
+/*å¯¼èˆªèœå•é€‰ä¸­æ—¶çš„èƒŒæ™¯è‰²*/
 #index-footer,#index-header .header-nav li.active {
 	background-color: #E4E4E4
 }
 
-/*Ê×Ò³ÄÚÈİÑùÊ½*/
+/*é¦–é¡µå†…å®¹æ ·å¼*/
 .homepage-wrapper {
 	color: #666
 }
@@ -340,7 +340,7 @@ body {
 	border: 1px solid #E4E4E4
 }
 
-/*"µãÈÚÍøÊÇË­"µÄÑùÊ½*/
+/*"ç‚¹èç½‘æ˜¯è°"çš„æ ·å¼*/
 .homepage-wrapper .container h3 {
 	margin: 0;
 	padding: 18px 0 13px;
@@ -371,7 +371,7 @@ body {
 	width: 100%
 }
 
-/*ÓÒ²àÄÚÈİÑùÊ½*/
+/*å³ä¾§å†…å®¹æ ·å¼*/
 .homepage-wrapper .container .sidebar {
 	display: inline-block;
 	padding: 0 22px;
@@ -380,11 +380,11 @@ body {
 	vertical-align: middle
 }
 
-/*ºáÌõ¹ã¸æÑùÊ½-------------------------start--------------------------*/
+/*æ¨ªæ¡å¹¿å‘Šæ ·å¼-------------------------start--------------------------*/
 .homepage-wrapper .banner {
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 34px;/*Ä£¿é¼äµÄ¼ä¸ô¾àÀë*/
+	margin-bottom: 34px;/*æ¨¡å—é—´çš„é—´éš”è·ç¦»*/
 	height: 361px;
 }
 
@@ -465,9 +465,9 @@ body {
 	text-align: center
 }
 
-/*"¹ã¸æ"ÑùÊ½*/
+/*"å¹¿å‘Š"æ ·å¼*/
 .homepage-wrapper .banner .main-banner .advert-cue {
-	line-height: 1; /*ĞĞ¸ß*/
+	line-height: 1; /*è¡Œé«˜*/
 	font-size: 12px;
 	color: #999;
 	position: absolute;
@@ -483,7 +483,7 @@ body {
 	background-position: left top;
 	background-color: #FFF
 }
-/*ºáÌõ¹ã¸æÑùÊ½---------------------------end--------------------------*/
+/*æ¨ªæ¡å¹¿å‘Šæ ·å¼---------------------------end--------------------------*/
 
 .homepage-wrapper .internet-finance .main-wrapper {
 	vertical-align: middle

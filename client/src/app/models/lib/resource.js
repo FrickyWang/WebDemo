@@ -1,29 +1,29 @@
-// DB²éÑ¯²Ù×÷
+ï»¿// DBæŸ¥è¯¢æ“ä½œ
 define(["angular"], function(angular) {
 	
 	function resource(params) {
 		angular.extend(this, params);
 		this.dbUrl = 'http://127.0.0.1:3000';
 	}
-	// ÉèÖÃrequest
+	// è®¾ç½®request
 	resource.prototype.use = function(req) {
 		this.request = req; 
 		return this;
 	};
-	// ÉèÖÃÂ·¾¶
+	// è®¾ç½®è·¯å¾„
 	resource.prototype.setBaseUrl = function(url) {
 		this.baseUrl = url; 
 		return this;
 	};
-	// ALL²éÑ¯
+	// ALLæŸ¥è¯¢
 	resource.prototype.queryAll = function(params) {
 		return this.request.get(this.dbUrl + this.baseUrl, params);
 	}
-	// One²éÑ¯
+	// OneæŸ¥è¯¢
 	resource.prototype.queryOne = function(subUrl, params) {
 		return this.request.get(this.dbUrl + this.baseUrl + "/" + subUrl, params);
 	}
-	// ²éÑ¯ĞÅÏ¢
+	// æŸ¥è¯¢ä¿¡æ¯
 	resource.prototype.queryInfor = function(subUrl1, subUrl2, params) {
 		return this.request.get(this.dbUrl + this.baseUrl + "/" + subUrl1 + "/" + subUrl2, params);
 	}

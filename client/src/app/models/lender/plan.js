@@ -1,4 +1,4 @@
-// ÒµÎñÀàĞÍ
+ï»¿// ä¸šåŠ¡ç±»å‹
 define(["models/lib/resource", "models/lib/request"], function(resource) {
 	function plan($http, $q, $sce, Request) {
 		this.$http = $http; 
@@ -11,11 +11,11 @@ define(["models/lib/resource", "models/lib/request"], function(resource) {
 		})
 	}
 	
-	// ¼Ì³Ğresource
+	// ç»§æ‰¿resource
 	plan.prototype = new resource({});
 	plan.prototype.constructor = plan;
 	
-	// ALL²éÑ¯
+	// ALLæŸ¥è¯¢
 	plan.prototype.queryAll = function(params) {
 		return this.request.get(this.dbUrl + "/feapi/plans", params).then(function(response) {
 			return response;
@@ -24,7 +24,7 @@ define(["models/lib/resource", "models/lib/request"], function(resource) {
 		});
 	}
 	
-	// One²éÑ¯
+	// OneæŸ¥è¯¢
 	plan.prototype.queryOne = function(subUrl, params) {
 		return this.request.get("/feapi/plans/" + subUrl, params).then(function(response) {
 			return response;
@@ -32,11 +32,11 @@ define(["models/lib/resource", "models/lib/request"], function(resource) {
 			return this.$q.reject(response);
 		})
 	}
-	// Faqs²éÑ¯
+	// FaqsæŸ¥è¯¢
 	plan.prototype.queryFaqs = function(subUrl, params) {
 		return this.request.get("/feapi/plans/" + subUrl + "/faqs", params);
 	}
-	// GradeRatesÃèÊö²éÑ¯
+	// GradeRatesæè¿°æŸ¥è¯¢
 	plan.prototype.getGradeRatesDesc = function() {
 		return this.request.get("/nb/api/public/descriptions?type=profit").then(function(response) {
 			return response
@@ -83,7 +83,7 @@ define(["models/lib/resource", "models/lib/request"], function(resource) {
 	plan.prototype.queryChannelDescription = function(params) {
 		return this.request.get("/nb/api/plans/houseplans/channels/" + params);
 	}
-	// ·ÀÖ¹js mini»¯Ê±¸Ä±ä±äÁ¿Ãû³Æ£¬Í¨¹ıÕâÖÖ·½Ê½×¢Èë±äÁ¿
+	// é˜²æ­¢js miniåŒ–æ—¶æ”¹å˜å˜é‡åç§°ï¼Œé€šè¿‡è¿™ç§æ–¹å¼æ³¨å…¥å˜é‡
 	plan.$inject = ["$http", "$q", "$sce", "Request"];
 	return plan;
 });
