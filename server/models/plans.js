@@ -1,4 +1,4 @@
-var mongoose=require('../common/lib/mongdbUtils.js');
+﻿var mongoose=require('../common/lib/mongdbUtils.js');
 var Schema = mongoose.Schema;
 
 var PlansSchema = new Schema({
@@ -12,7 +12,8 @@ var PlansSchema = new Schema({
     intRateDownLimit:String,
     intRateUpLimit:String,
     intRate:String,
-    rate:String
+    rate:String,
+    starPlan:Boolean
 });
 
 module.exports = mongoose.model('Plans', PlansSchema, 'Plans');

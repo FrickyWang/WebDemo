@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+﻿  <!DOCTYPE html>
   <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -115,8 +115,7 @@
           </div>
 
           <div class="plan-rate right-border">
-            <!--<p>{{ plan | planIntRate }}<small>%</small></p>-->
-            <p>{{ plan.interestDownLimit }}<small>%</small></p>
+            <p>{{ plan | planIntRate }}<small>%</small></p>
             <p>历史年化收益率</p>
           </div>
 
@@ -141,29 +140,13 @@
     </div>
 
     <div class="other-plan sidebar">
-      <h3>所有团产品<a href="https://www.dianrong.com/market">查看更多  &gt;</a></h3>
+      <h3>所有团产品<a href="/market">查看更多  ></a></h3>
       <ul class="simple-plan-list">
-        <!-- ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
-          <div class="plan-name"><a ng-href="/market/plan?planId=185001" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=185001">新手团</a></div><!--
-       --><div class="plan-rate ng-binding">10 %</div><!--
+        <li ng-cloak ng-repeat="oplan in otherPlans">
+          <div class="plan-name"><a ng-href="{{'/market/plan?planId=' + oplan.loanId}}" ng-bind="oplan.simpleName"></a></div><!--
+       --><div class="plan-rate">{{ oplan | planIntRate }} %</div><!--
        --><div class="plan-text">历史年化收益率</div>
-        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
-          <div class="plan-name"><a ng-href="/market/plan?planId=340401" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=340401">节节发</a></div><!--
-       --><div class="plan-rate ng-binding">4.5-8 %</div><!--
-       --><div class="plan-text">历史年化收益率</div>
-        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
-          <div class="plan-name"><a ng-href="/market/plan?planId=68201" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=68201">经典团</a></div><!--
-       --><div class="plan-rate ng-binding">7 %</div><!--
-       --><div class="plan-text">历史年化收益率</div>
-        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
-          <div class="plan-name"><a ng-href="/market/plan?planId=267601" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=267601">季季翻</a></div><!--
-       --><div class="plan-rate ng-binding">8 %</div><!--
-       --><div class="plan-text">历史年化收益率</div>
-        </li><!-- end ngRepeat: oplan in otherPlans --><li ng-repeat="oplan in otherPlans" class="ng-scope" style="">
-          <div class="plan-name"><a ng-href="/market/plan?planId=402458" ng-bind="oplan.simpleName" class="ng-binding" href="https://www.dianrong.com/market/plan?planId=402458">月月盈</a></div><!--
-       --><div class="plan-rate ng-binding">7.2 %</div><!--
-       --><div class="plan-text">历史年化收益率</div>
-        </li><!-- end ngRepeat: oplan in otherPlans -->       
+        </li> 
       </ul>
     </div>
 

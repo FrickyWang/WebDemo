@@ -1,8 +1,11 @@
 ﻿//从高到低ERROR,WARN,INFO,DEBUG
 var log4js=require('log4js');
 var fs=require('fs');
+// 引入日志配置文件
 var config=require('./config.json');
+// 读取工具包
 var utils=require('../common/lib/utils.js');
+// 解析日志配置文件
 var configContent = JSON.parse(fs.readFileSync("logJs/config.json","utf8"));
 
 // 判断路径是否存在

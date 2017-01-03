@@ -1,14 +1,17 @@
-define("homepage/homepage", ["WebDemo"], function(WebDemo) {
+Ôªødefine("homepage/homepage", ["WebDemo"], function(WebDemo) {
 	WebDemo.controller("homeContextCtrl", ["$scope", "$http", "Plan",function($scope, $http, Plan){
 		var sucFunc = function (dataList) {
 			$scope.plans = [];
+			$scope.otherPlans = [];
 			angular.forEach(dataList, function(list) {
-				$scope.plans.push(list);
+				if (list.starPlan) {
+					$scope.plans.push(list);
+				}
 			}); 
-			//$scope.otherPlans = t.slice(0, 6)
+			$scope.otherPlans = dataList.slice(0, 6)
 		}
         
-        // ≤È—Ø≤˙∆∑
+        // Êü•ËØ¢‰∫ßÂìÅ
 		Plan.queryAll().then(function(responseData) {
 			sucFunc(responseData);
 		});
