@@ -1,18 +1,16 @@
 ﻿// 收益信息格式化
 define([], function() {
-	function plan(obj) {
+	function plan() {
 		// 数字格式化
 		var valueFormat = function(value) {
 			var value_100 = 100 * value;
 			var valueInt = parseInt(value_100.toFixed());
-			return isNaN(value_100) ? 0 : value_100.toFixed(1) == valueInt ? valueInt : value_100.toFixed(1)
+			return isNaN(value_100) ? 0 : value_100.toFixed(1) == valueInt ? valueInt : value_100.toFixed(1);
 		};
-		return function(t) {
-			return obj.interestDownLimit && obj.interestUpLimit || obj.intRateDownLimit && obj.intRateUpLimit ? valueFormat(obj.interestDownLimit || obj.intRateDownLimit) + "-" + valueFormat(obj.interestUpLimit || obj.intRateUpLimit) : valueFormat(obj.intRate || obj.rate);
+		return function(input) {
+			return input.interestDownLimit && input.interestUpLimit || input.intRateDownLimit && input.intRateUpLimit ? valueFormat(input.interestDownLimit || input.intRateDownLimit) + "-" + valueFormat(input.interestUpLimit || input.intRateUpLimit) : valueFormat(input.intRate || input.rate);
 		}
 	}
-	// 防止js mini化时改变变量名称，通过这种方式注入变量
-	plan.$inject = ["$filter"];
 	
 	return {
 		planIntRate: plan

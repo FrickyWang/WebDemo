@@ -1,5 +1,5 @@
 ﻿define("homepage/homepage", ["WebDemo"], function(WebDemo) {
-	WebDemo.controller("homeContextCtrl", ["$scope", "$http", "Plan",function($scope, $http, Plan){
+	WebDemo.controller("homeContextCtrl", ["$scope", "$http", "Plan", function($scope, $http, Plan){
 		var sucFunc = function (dataList) {
 			$scope.plans = [];
 			$scope.otherPlans = [];
@@ -8,7 +8,7 @@
 					$scope.plans.push(list);
 				}
 			}); 
-			$scope.otherPlans = dataList.slice(0, 6)
+			$scope.otherPlans = dataList.slice(0, 6);
 		}
         
         // 查询产品

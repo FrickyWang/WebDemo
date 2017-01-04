@@ -1,4 +1,5 @@
-﻿define(["angular", "common/filters/plan"], function(angular, planFilter) {
+﻿// 共同index
+define(["angular", "common/filters/plan"], function(angular, planFilter) {
 	var common_index = angular.module("webDemo.common", []).filter("planIntRate", planFilter.planIntRate);
-	return common_index
+	return common_index;
 });
