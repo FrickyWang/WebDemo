@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+﻿module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat'); //js文件合并
   grunt.loadNpmTasks('grunt-contrib-jshint'); //js代码检查
@@ -14,7 +14,8 @@ module.exports = function (grunt) {
   // Default task.
   //grunt.registerTask('default', ['jshint','build','karma:unit']);
   //grunt.registerTask('build', ['clean','html2js','concat','recess:build','copy:assets']);
-  grunt.registerTask('build', ['clean:cleanAll','requirejs','concat:appJs','copy','clean:cleanTemp']);
+  grunt.registerTask('build', ['clean:cleanAll','jshint','requirejs','concat:appJs','copy','clean:cleanTemp']);
+  grunt.registerTask('a', ['jshint']);
   //grunt.registerTask('build', ['clean:cleanAll','requirejs','concat','copy']);
   //grunt.registerTask('a', ['requirejs']);
   //grunt.registerTask('release', ['clean','html2js','uglify','jshint','karma:unit','concat:index', 'recess:min','copy:assets']);
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
     grunt.log.subhead(Date());
   });
   
-  var requirejsModules = [];
+  //var requirejsModules = [];
   //grunt.file.expand({cwd:'<%= distdir %>/static'},'**/*.js');
   /*var karmaConfig = function(configFile, customOptions) {
     var options = { configFile: configFile, keepalive: true };
@@ -72,13 +73,14 @@ module.exports = function (grunt) {
       },
       appJs: {
         files: [{ dest: '<%= distdir %>/static/scripts', src : 'index.js', expand: true, cwd: 'src/app/temp' },
-        	{ dest: '<%= distdir %>/static/scripts', src : 'homepage/*', expand: true, cwd: 'src/app' }]
+        { dest: '<%= distdir %>/static/scripts', src : 'zh-client.js', expand: true, cwd: 'src/app/' },
+        { dest: '<%= distdir %>/static/scripts', src : 'homepage/*', expand: true, cwd: 'src/app' }]
       },
-      templet:{
-      	files: [{ dest: '<%= distdir %>', src : 'templet/*', expand: true, cwd: 'src/app' }]
+      templet: {
+        files: [{ dest: '<%= distdir %>', src : 'templet/*', expand: true, cwd: 'src/app' }]
       },
       tomcat: {
-      	files:[{ dest: 'D:/apache-tomcat/webapps', src : 'dist/**', expand: true, cwd: '' }]
+        files: [{ dest: 'D:/apache-tomcat/webapps', src : 'dist/**', expand: true, cwd: '' }]
       }
     },
     requirejs:{
@@ -204,7 +206,7 @@ module.exports = function (grunt) {
         dest: '<%= distdir %>/jquery.js'
       }*/
       appJs : {
-      	options: {
+        options: {
           banner: "<%= banner %>"
         },
         src:['src/app/temp/index.js','src/app/temp/controllers/**/*.js'],
@@ -267,21 +269,20 @@ module.exports = function (grunt) {
       build: {
         files:['<%= src.js %>', '<%= src.specs %>', '<%= src.lessWatch %>', '<%= src.tpl.app %>', '<%= src.tpl.common %>', '<%= src.html %>'],
         tasks:['build','timestamp']
-      }
+      }, 'src/app/zh-client.js'
     },*/
     jshint:{
-      files:['gruntFile.js', '<%= src.js %>', '<%= src.jsTpl %>', '<%= src.specs %>', '<%= src.scenarios %>'],
+      files:['gruntFile.js','src/app/common/**/*.js'],
       options:{
-        curly:true,
-        eqeqeq:true,
-        immed:true,
-        latedef:true,
-        newcap:true,
-        noarg:true,
-        sub:true,
-        boss:true,
-        eqnull:true,
-        globals:{}
+        curly:true, // 循环或者条件语句必须使用花括号包围
+        bitwise:true, // 禁止使用位运算符
+        newcap:true, // 构造器首字母大写
+        //eqeqeq:true, // 不能使用==和!=,强制使用===和!==
+        latedef:"nofunc",// 禁止定义之间使用变量,nofunc允许函数申明被忽略
+        noarg:true, // 禁止使用arguments.callee,caller
+        unused:true, // 变量定义未使用
+        boss:true, // 禁止比较表达式的值没有达到预期警告
+        eqnull:true // 禁止==null
       }
     }
   });

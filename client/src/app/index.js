@@ -3,7 +3,7 @@
 	paths: {
 		angular: "../tp/angular/angular.min",
 		jquery: "../tp/jquery/jquery-3.1.1.min",
-		jsencrypt: "../tp/jsencrypt/jsencrypt.min",
+		jsencrypt: "../tp/jsencrypt/jsencrypt.min"
 		/*"angular.ui.router": "../tp/angular-ui-router/release/angular-ui-router",
 		"angular.animate": "../tp/angular-animate/angular-animate",
 		"angular.touch": "../tp/latest-tp/libs/angular-touch/angular-touch.min",
@@ -110,10 +110,10 @@
 };
 require.config(_requireConfig);
 window.WebDemoConfigDefaultDeps = [];
-require(["angular","models/index","common/index","directives/index"],function(angular){
+require(["angular","models/index","common/index"],function(angular){
 	//function webDemo() {
-	   var webDemo = angular.module('WebDemo', ["webDemo.models","webDemo.common","webDemo.directives"]);
-	   webDemo.config(["CryptoConfig", function(cryptoConfig) {
+       var webDemo = angular.module('WebDemo', ["webDemo.models","webDemo.common"]);
+       webDemo.config(["CryptoConfig", function(cryptoConfig) {
 			/*webDemo.setTriggers({
 				mouseenter: "mouseleave",
 				click: "click",
@@ -122,30 +122,31 @@ require(["angular","models/index","common/index","directives/index"],function(an
 			});*/
 			cryptoConfig.publicKey = WebDemoConfig.publicKey;
 		}]);
-	   define("WebDemo", [], function() {
+       define("WebDemo", [], function() {
 			return webDemo;
-	   });
-	   _addScriptsAndBootstrap(["controllers/common/header","controllers/common/main"], angular);
-	   
-	   function _addScriptsAndBootstrap(deps, angular) {
-	      _addMoreCommonScripts(deps);
-	      _bootstrapSLApp(angular);
+       });
+       
+       function _addScriptsAndBootstrap(deps, angular) {
+          _addMoreCommonScripts(deps);
+          _bootstrapSLApp(angular);
        }
-           
+       
+       _addScriptsAndBootstrap(["controllers/common/header","controllers/common/main"], angular);
+       
        function _addMoreCommonScripts(deps) {
-	      if (deps && deps.length > 0) {
-	      	  window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(deps);
-	      }
-	      if ("undefined" != typeof WebDemoConfig.additionalScripts) {
-	      	  window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(WebDemoConfig.additionalScripts);
-	      }
+          if (deps && deps.length > 0) {
+              window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(deps);
+          }
+          if ("undefined" != typeof WebDemoConfig.additionalScripts) {
+              window.WebDemoConfigDefaultDeps = window.WebDemoConfigDefaultDeps.concat(WebDemoConfig.additionalScripts);
+          }
        }
        function _bootstrapSLApp(angular) {
-	      require(window.WebDemoConfigDefaultDeps, function() {
-	      	  // 手动加载模块
-		      angular.bootstrap(document, ["WebDemo"]);
-		      console.log("WebDemo app initialized :)");
-	      });
+          require(window.WebDemoConfigDefaultDeps, function() {
+              // 手动加载模块
+              angular.bootstrap(document, ["WebDemo"]);
+              console.log("WebDemo app initialized :)");
+          });
        }
 //}
 });
