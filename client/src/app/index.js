@@ -110,9 +110,9 @@
 };
 require.config(_requireConfig);
 window.WebDemoConfigDefaultDeps = [];
-require(["angular","models/index","common/index"],function(angular){
+require(["angular","models/index","common/index","directives/index"],function(angular){
 	//function webDemo() {
-       var webDemo = angular.module('WebDemo', ["webDemo.models","webDemo.common"]);
+       var webDemo = angular.module('WebDemo', ["webDemo.models","webDemo.common","webDemo.directives"]);
        webDemo.config(["CryptoConfig", function(cryptoConfig) {
 			/*webDemo.setTriggers({
 				mouseenter: "mouseleave",

@@ -18,14 +18,14 @@ define(["angular"], function(angular) {
 	// ALL查询
 	resource.prototype.queryAll = function(params) {
 		return this.request.get(this.dbUrl + this.baseUrl, params);
-	}
+	};
 	// One查询
 	resource.prototype.queryOne = function(subUrl, params) {
 		return this.request.get(this.dbUrl + this.baseUrl + "/" + subUrl, params);
-	}
+	};
 	// 查询信息
 	resource.prototype.queryInfor = function(subUrl1, subUrl2, params) {
 		return this.request.get(this.dbUrl + this.baseUrl + "/" + subUrl1 + "/" + subUrl2, params);
-	}
+	};
 	return resource;
 });

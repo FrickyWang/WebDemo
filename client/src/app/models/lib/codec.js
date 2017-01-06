@@ -8,15 +8,15 @@ define([], function() {
 				tmpArray.push(encodeURIComponent(property) + "=" + encodeURIComponent(arrayEncode[property]));
 			}
 		}
-		return tmpArray.join("&")
+		return tmpArray.join("&");
     };
     // URI格式转换为汉字
     var decode = function(encode) {
-    	    var index;
-    	    var name;
-    	    var value;
-            var obj = {};
-    	    var tmpArray = encode.split("&");
+			var index;
+			var name;
+			var value;
+			var obj = {};
+			var tmpArray = encode.split("&");
 			for ( i = 0; i < tmpArray; i++) {
 				index = c.indexOf("=");
 				name = c.slice(0, index);
@@ -28,5 +28,5 @@ define([], function() {
 	return {
 		encode: encode,
 		decode: decode
-	}
+	};
 });

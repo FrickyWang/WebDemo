@@ -1,4 +1,4 @@
-﻿define("homepage/homepage", ["WebDemo"], function(WebDemo) {
+﻿define("homepage/homepage", ["WebDemo","directives/ui/webDemo-banner"], function(WebDemo) {
 	WebDemo.controller("homeContextCtrl", ["$scope", "$http", "$filter", "Plan", function($scope, $http, $filter, Plan){
 		var sucFunc = function (dataList) {
 			$scope.plans = [];
@@ -9,7 +9,7 @@
 				}
 			}); 
 			$scope.otherPlans = dataList.slice(0, 6);
-		}
+		};
 		
 		var tranFilter = $filter("translate");
 		// 主页面轮播广告内容

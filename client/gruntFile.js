@@ -15,6 +15,7 @@
   //grunt.registerTask('default', ['jshint','build','karma:unit']);
   //grunt.registerTask('build', ['clean','html2js','concat','recess:build','copy:assets']);
   grunt.registerTask('build', ['clean:cleanAll','jshint','requirejs','concat:appJs','copy','clean:cleanTemp']);
+  //grunt.registerTask('build', ['clean:cleanAll','jshint','requirejs','concat:appJs','copy']);
   grunt.registerTask('a', ['jshint']);
   //grunt.registerTask('build', ['clean:cleanAll','requirejs','concat','copy']);
   //grunt.registerTask('a', ['requirejs']);
@@ -73,7 +74,7 @@
       },
       appJs: {
         files: [{ dest: '<%= distdir %>/static/scripts', src : 'index.js', expand: true, cwd: 'src/app/temp' },
-        { dest: '<%= distdir %>/static/scripts', src : 'zh-client.js', expand: true, cwd: 'src/app/' },
+        { dest: '<%= distdir %>/static/scripts', src : 'resources/*', expand: true, cwd: 'src/app' },
         { dest: '<%= distdir %>/static/scripts', src : 'homepage/*', expand: true, cwd: 'src/app' }]
       },
       templet: {
@@ -209,7 +210,7 @@
         options: {
           banner: "<%= banner %>"
         },
-        src:['src/app/temp/index.js','src/app/temp/controllers/**/*.js'],
+        src:['src/app/temp/index.js','src/app/temp/directives/ui/webDemo-banner.js','src/app/temp/controllers/**/*.js'],
         dest:'src/app/temp/index.js'
       }
     },
@@ -272,7 +273,7 @@
       }, 'src/app/zh-client.js'
     },*/
     jshint:{
-      files:['gruntFile.js','src/app/common/**/*.js'],
+      files:['gruntFile.js','src/app/index.js'],
       options:{
         curly:true, // 循环或者条件语句必须使用花括号包围
         bitwise:true, // 禁止使用位运算符

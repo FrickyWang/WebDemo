@@ -42,7 +42,7 @@
     </script>
     <script type="text/javascript" src="static/tp/require/require.min.js"></script>
     <script type="text/javascript" src="static/scripts/index.js"></script>
-    <script type="text/javascript" src="static/scripts/zh-client.js"></script>
+    <script type="text/javascript" src="static/scripts/resources/zh-client.js"></script>
     
     <style type="text/css">
     @font-face {
@@ -190,9 +190,9 @@
         </a>
       </div>
 
-      <!--<div class="dr-news">
-        <div sl-banners border="60" interval="4">
-          <li ng-repeat="art in news" sl-banner>
+      <div class="dr-news">
+        <div webDemoBanners border="60" interval="4">
+          <li ng-repeat="art in news" webDemoBanner>
             <a href="{{art.href}}" target="_blank">
               <i class="{{art.image}}"></i>
               <p class="title" ng-bind="art.title | slStringTruncate:24"></p>
@@ -200,7 +200,7 @@
             </a>
           </li>
         </div>
-      </div>-->
+      </div>
 
       </div>
 

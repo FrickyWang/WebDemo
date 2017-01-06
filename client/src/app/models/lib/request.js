@@ -14,7 +14,7 @@
 		}, function(response) {
 			return qService.reject(response.data);
 		});
-	}
+	};
 	
 	//get方法
 	request.prototype.get = function(url, params, padParams) {
@@ -24,7 +24,7 @@
 			params: params
 		}, padParams);
 		return this.emit(eParams);
-	}
+	};
 	// jsonp方法
 	request.prototype.jsonp = function(url, params, padParams) {
 		var tmpParams = angular.extend(params, {
@@ -36,7 +36,7 @@
 			params: tmpParams
 		}, padParams);
 		return this.emit(eParams);
-	}
+	};
 	// post方法
 	request.prototype.post = function(url, params, padParams) {
 		var strParams = '';
@@ -55,27 +55,27 @@
 			}
 		}, padParams);
 		return this.emit(eParams);
-	}	
+	};	
 	// 参数加密
 	request.prototype.encryptParams = function(params, encryptParams) {
 		var crypto = this.crypto;
 		var tmpParams = angular.extend({}, params);
 		if (!crypto.enabled()) {
-		    return tmpParams;
-	    }
+			return tmpParams;
+		}
 		if (!encryptParams || 0 === encryptParams.length) {
-		    return tmpParams;
-	    }
+			return tmpParams;
+		}
 		var tmpArray = [];
 		angular.forEach(encryptParams, function(items) {
 			if(params[items]){
-			    tmpParams[items] = crypto.encrypt(params[items]);
-			    tmpArray.push(items);
-		    }
+				tmpParams[items] = crypto.encrypt(params[items]);
+				tmpArray.push(items);
+			}
 		});
 		tmpParams.encryptedParam = tmpArray.join(";");
 		return tmpParams;
-	}
+	};
 	// 防止js mini化时改变变量名称，通过这种方式注入变量
 	request.$inject = ["$http", "$q", "Crypto"];
 	
