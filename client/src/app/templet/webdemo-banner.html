@@ -1,0 +1,7 @@
+﻿<ul class="index-banner-list clearfix" ng-transclude></ul>
+<ul class="index-banner-indicator">
+	<li class="i" ng-repeat="i in indicators" ng-style="{left: (i.left + 'px')}" ng-click="switch($index)"></li>
+	<li class="index-icon-arrow-left" ng-click="prev()"></li>
+	<li class="index-icon-arrow-right" ng-click="next()"></li>
+	<li class="current" ng-style="{left: (current.left + 'px')}"></li>
+</ul>

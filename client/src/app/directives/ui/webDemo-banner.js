@@ -1,9 +1,9 @@
 ﻿define("directives/ui/webDemo-banner", ["directives/index"], function(directives_index) {
-	directives_index.directive("webDemoBanners", ["$interval", function($interval) {
+	directives_index.directive("webdemoBanners", ["$interval", function($interval) {
 		return {
-			//templateUrl: "/resource/static/directives/ui/sl-banner", <ul class="sl-banner-list clearfix" ng-transclude="">
-			template:'<div><ul class="sl-banner-list clearfix" ng-transclude></ul></div>',
-			transclude: true, // 
+			templateUrl: "./templet/webdemo-banner.html",
+			transclude: true,
+			//template:'<ul class="sl-banner-list clearfix" ng-transclude></ul><ul class="sl-banner-indicator"><li ng-repeat="i in indicators" ng-style="{left: (i.left + 'px')}" ng-click="switch($index)"></li><li class="sl-icon-arrow-left" ng-click="prev()"></li><li class="sl-icon-arrow-right" ng-click="next()"></li><li class="current" ng-style="{left: (current.left + 'px')}"></li></ul>',
 			restrict: "A", // 申明形式,属性
 			controller: ["$scope", "$element", "$attrs", function($scope, $element, $attrs) {
 				$scope.indicators = [];
@@ -51,9 +51,9 @@
 						if ($scope.current.banner) {
 							$scope.current.banner.hide();
 						}
-						$element.show();
+						banner.show();
 						$scope.current.index = index;
-						$scope.current.banner = $element;
+						$scope.current.banner = banner;
 						$scope.current.left = $scope.indicators[index].left;
 					}
 				};
@@ -79,10 +79,10 @@
 			}]
 		};
 	}]);
-	directives_index.directive("webDemoBanner", [function() {
+	directives_index.directive("webdemoBanner", [function() {
 		return {
 			scope: true,
-			require: "^webDemoBanners", // 使用父类控制器
+			require: "^webdemoBanners", // 使用父类控制器
 			restrict: "A",
 			link: function(scope, element, attrs, pController) {
 				scope.show = function() {
