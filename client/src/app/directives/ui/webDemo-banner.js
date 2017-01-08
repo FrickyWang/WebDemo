@@ -13,7 +13,7 @@
 				var interValue = parseFloat($attrs.interval); // 获取interval属性，间隔时间
 				var borderValue = parseFloat($attrs.border) || 20; // 获取border属性，边框宽度
 				var picWidth = $element.width() - 2 * borderValue; // 获取图片实际宽度 元素的宽度-边框宽度
-				// 获取每次的偏移量
+				// 计算圆点每次的偏移量
 				function getOffside() {
 					var bLength = $scope.banners.length;
 					var valueA = picWidth / bLength;
@@ -40,8 +40,8 @@
 				this.addBanner = function(scope) {
 					$scope.banners.push(scope);
 					if (scope.$last) {
-						getOffside();
-						$scope["switch"](0);
+						getOffside(); // banner全部加载完成后，计算圆点偏移量
+						$scope["switch"](0); //最开始选择第一个banner，使其与第一圆点重合
 					}
 				};
 				$scope["switch"] = function(index) {
