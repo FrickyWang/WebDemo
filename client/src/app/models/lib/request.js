@@ -1,7 +1,9 @@
 ﻿define(["angular", "models/lib/codec", "models/lib/crypto"], function(angular, codec) {
 	
 	function request($http, $q, Crypto) {
-		this.$http = $http, this.$q = $q, this.crypto = Crypto;
+		this.$http = $http;
+		this.$q = $q;
+		this.crypto = Crypto;
 	}
 	
 	request.prototype.emit = function(params) {

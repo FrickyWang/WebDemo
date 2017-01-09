@@ -1,4 +1,5 @@
-﻿var resources = {
+﻿/* jshint ignore:start */
+var resources = {
   "password_different":"两次输入的密码不一致，请重新输入",
   "send_code_again":"重新获取",
   "day": "天",
@@ -468,3 +469,4 @@
   "platform.jijifan": "季季翻",
   "about_us.job.all": "全部"
 };
+/* jshint ignore:end */

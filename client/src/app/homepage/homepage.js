@@ -34,6 +34,29 @@
 			title: tranFilter("homepage.news_title_5"),
 			content: tranFilter("homepage.news_content_5")
 		}];
+		
+		// 媒体评价
+		$scope.medias = [{
+			link: "https://www.dianrong.com/mkt/news/desktop/57a842afdab128180009236c.html",
+			content: tranFilter("homepage.media_1"),
+			name: "xhw"
+		}, {
+			link: "https://www.dianrong.com/mkt/news/desktop/568e1f93011a891800328e76.html",
+			content: tranFilter("homepage.media_2"),
+			name: "nxzb"
+		}, {
+			link: "https://www.dianrong.com/mkt/news/desktop/580883b02268aa2900ef4b3a.html",
+			content: tranFilter("homepage.media_3"),
+			name: "cnbc"
+		}, {
+			link: "https://www.dianrong.com/mkt/news/desktop/58088f322268aa2900ef4b58.html",
+			content: tranFilter("homepage.media_4"),
+			name: "cnn"
+		}, {
+			link: "https://www.dianrong.com/mkt/news/desktop/580891612268aa2900ef4ba5.html",
+			content: tranFilter("homepage.media_5"),
+			name: "la"
+		}];
         
         // 查询产品
 		Plan.queryAll().then(function(responseData) {

@@ -70,7 +70,7 @@
   </head>
   <body ng-controller="MainCtrl">
   <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
-      <div ng-include="templet/header.tpl.html"></div>
+      <div ng-include="'templet/header.tpl.html'"></div>
   </header>
 
   <div class="homepage-wrapper" ng-controller="homeContextCtrl">
@@ -160,54 +160,63 @@
     </div>
   </div>
   
-    <div class="about-dr container">
+  <div class="about-dr container">
     <div class="main-wrapper full">
       <h3>关于点融</h3>
 
       <div class="bulletins">
-
-      <div class="dr-leadership">
-        <a href="/public/about#/leadership/" target="_blank">
-          <i></i>
-          <p class="title">行业黄金管理团队</p>
-          <p class="content">点融高管团队被评为 “黄金管理团队”，毕业于哈佛，斯坦福，MIT等顶尖名校，平均15年国际互联网和金融公司工作...<span class="link">查看更多&nbsp;&gt;</span></p>
-        </a>
-      </div>
-
-      <div class="dr-partner">
-        <a href="/public/about#/company?anchor=investor" target="_blank">
-          <i></i>
-          <p class="title">我们的投资方</p>
-          <p class="content">点融网已先后获得渣打直接投资有限公司、老虎环球基金以及北极光创投等投资方投资。C轮融资2.07亿美元。<span class="link">查看更多&nbsp;&gt;</span></p>
-        </a>
-      </div>
-
-      <div class="dr-recruit">
-        <a href="/public/about#/job" target="_blank">
-          <i></i>
-          <p class="title">加入我们</p>
-          <p class="content">我们需要优秀的人才加入我们的团队，如果你有开拓精神并渴望迎接新的挑战，请加入我们，你可以获得宝贵的在创新前沿的...<span class="link">查看更多&nbsp;&gt;</span></p>
-        </a>
-      </div>
-
-      <div class="dr-news">
-        <div webdemo-banners border="60" interval="4">
-          <li ng-repeat="art in news" webdemo-banner>
-            <a href="{{art.href}}" target="_blank">
-              <i class="{{art.image}}"></i>
-              <p class="title" ng-bind="art.title | slStringTruncate:24"></p>
-              <p class="content"><span ng-bind="art.content | slStringTruncate:76"></span><span class="link">查看更多&nbsp;&gt;</span></p>
-            </a>
-          </li>
+        <div class="dr-leadership">
+          <a href="/public/about#/leadership/" target="_blank">
+            <i></i>
+            <p class="title">行业黄金管理团队</p>
+            <p class="content">点融高管团队被评为 “黄金管理团队”，毕业于哈佛，斯坦福，MIT等顶尖名校，平均15年国际互联网和金融公司工作...<span class="link">查看更多&nbsp;&gt;</span></p>
+          </a>
         </div>
-      </div>
-
+        <div class="dr-partner">
+          <a href="/public/about#/company?anchor=investor" target="_blank">
+            <i></i>
+            <p class="title">我们的投资方</p>
+            <p class="content">点融网已先后获得渣打直接投资有限公司、老虎环球基金以及北极光创投等投资方投资。C轮融资2.07亿美元。<span class="link">查看更多&nbsp;&gt;</span></p>
+          </a>
+        </div>
+        <div class="dr-recruit">
+          <a href="/public/about#/job" target="_blank">
+            <i></i>
+            <p class="title">加入我们</p>
+            <p class="content">我们需要优秀的人才加入我们的团队，如果你有开拓精神并渴望迎接新的挑战，请加入我们，你可以获得宝贵的在创新前沿的...<span class="link">查看更多&nbsp;&gt;</span></p>
+          </a>
+        </div>
+        <div class="dr-news">
+          <div webdemo-banners border="60" interval="4">
+            <li ng-repeat="art in news" webdemo-banner>
+              <a href="{{art.href}}" target="_blank">
+                <i class="{{art.image}}"></i>
+                <p class="title" ng-bind="art.title | slStringTruncate:24"></p>
+                <p class="content"><span ng-bind="art.content | slStringTruncate:76"></span><span class="link">查看更多&nbsp;&gt;</span></p>
+              </a>
+            </li>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
-
-
+  <div class="press-release container">
+    <div class="main-wrapper full">
+      <h3>媒体评价</h3>
+      <div class="wrapper">
+        <ul class="art-list clearfix" ng-cloak>
+          <li ng-repeat="media in medias">
+            <a ng-href="{{media.link}}" target="_blank">
+              <i class="{{'media-'+media.name}}"></i>
+              <p ng-bind="media.content"></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  </body>
-  </html>
+
+</div>
+</body>
+</html>

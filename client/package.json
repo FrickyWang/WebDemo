@@ -1,8 +1,9 @@
-{
+﻿{
   "author": "Fricky Wang",
   "name": "WebDemo",
   "homepage": "https://github.com/FrickyWang/WebDemo",
   "version": "0.0.1-SNAPSHOT",
+  "description": "WebDemo study",
   "repository": {
     "type": "git",
     "url": "git@github.com:FrickyWang/WebDemo.git"
@@ -19,14 +20,12 @@
   "engines": {
     "node": ">= 0.8.4"
   },
-  "dependencies": {},
   "devDependencies": {
-    "grunt" : "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-requirejs": "*"
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-requirejs": "^1.0.0"
   }
 }
