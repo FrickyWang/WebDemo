@@ -56,7 +56,7 @@
       font-style: normal;
     }
 
-    @font-face {
+    /*@font-face {
       font-family: 'proxima-nova';
       src: url(static/styles/fonts/proximanova/proximanova-bold-webfont.eot);
       src: url(static/styles/fonts/proximanova/proximanova-bold-webfont.eot?#iefix) format('embedded-opentype'),
@@ -65,10 +65,11 @@
         url(static/styles/fonts/proximanova/proximanova-bold-webfont.svg#proxima_nova_rgbold) format('svg');
       font-weight: bold;
       font-style: normal;
-    }
+    }*/
   </style>
   </head>
   <body ng-controller="MainCtrl">
+  <div class="wrapper">
   <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
       <div ng-include="'templet/header.tpl.html'"></div>
   </header>
@@ -216,7 +217,90 @@
       </div>
     </div>
   </div>
+</div>
+    <!--footer-->
+    <footer id="index-footer">
+  <div class="container footer-site-map">
+  <dl>
+    <dt class="title footer-home">公司信息</dt>
+    <dd><a href="/public/about#/company">公司简介</a></dd>
+    <dd><a href="/public/about#/news">点融动态</a></dd>
+    <dd><a href="/public/about#/media">媒体报道</a></dd>
+    <dd><a href="/public/about#/job">加入我们</a></dd>
+    <dd><a href="/public/about#/company?anchor=office">联系我们</a></dd>
+    <dd><a href="http://forum.dianrong.com/" target="_bank">点融社区</a></dd>
+  </dl>
 
+  <dl class="policy">
+    <dt class="title footer-policy">相关政策</dt>
+    <dd><a href="/public/about#/safety" target="_blank">安全保障</a></dd>
+    <dd><a href="/public/rates-and-fees" target="_blank">费率说明</a></dd>
+    <dd><a href="/market/multiple-security" target="_blank">多重保障</a></dd>
+    <dd><a href="/public/disclaimer" target="_blank">免责声明</a></dd>
+  </dl>
+
+  <dl class="app-download">
+    <dt class="title footer-mobile">手机应用</dt>
+    <dd class="download-link"><a href="https://itunes.apple.com/us/app/dian-rong-wang/id725186555?mt=8" target="_blank" rel="nofollow" class="iPhone"><i class="index-icon-apple"></i>iPhone</a></dd>
+    <dd class="download-link"><a href="http://app.mi.com/detail/56106" target="_blank" rel="nofollow" class="android"><i class="index-icon-android"></i>Android</a></dd>
+    <dd class="qr-code"></dd>
+    <dt class="title footer-public">关注公众号</dt>
+    <dd class="public-code"></dd>
+  </dl>
+
+  <dl class="our-office">
+    <dt>联系我们</dt>
+    <!--<dd class="map"></dd>-->
+    <dd>北京</dd>
+    <dd>上海</dd>
+    <dd>广州</dd>
+    <dd>重庆</dd>
+    <dd>南京</dd>
+    <dd>成都</dd>
+    <dd>天津</dd>
+    <dd>武汉</dd>
+    <dd>大连</dd>
+    <dd>深圳</dd>
+    <dd>合肥</dd>
+    <dd><a href="/public/about#/company?anchor=office">更多</a></dd>
+  </dl>
+
+</div>
+
+  <dl class="container footer-friend-link clearfix">
+  <dt>友情链接</dt>
+  <dd><a href="http://iof.hexun.com/" target="_blank">和讯理财</a></dd>
+  <dd><a href="http://licai.cofool.com/" target="_blank">叩富理财 </a></dd>
+  <dd><a href="http://www.trustores.cn/" target="_blank">香港保险</a></dd>
+  <dd><a href="http://www.asiafinance.cn/" target="_blank">金融导航</a></dd>
+  <dd><a href="http://www.szjstz.cn/" target="_blank">金苏财富</a></dd>
+  <dd><a href="http://www.guijinshu.com/" target="_blank">贵金属</a></dd>
+  <dd><a href="http://cngold.com.cn" target="_blank">中金网</a></dd>
+  <dd><a href="http://www.dingniugu.com/" target="_blank">顶牛股网</a></dd>
+  <dd><a href="http://www.ucai123.com/" target="_blank">航运指数</a></dd>
+  <dd><a href="http://www.fxsol-uk.com/" target="_blank">Fxsol官网</a></dd>
+  <dd><a href="http://www.leadbank.com.cn/" target="_blank" class="lead-position">利得财富</a></dd>
+  <dd><a href="http://www.dianrong.com/caifu/ " target="_blank">P2P理财</a></dd>
+</dl>
+
+  
+<ul class="footer-copyright">
+  <li>©2017&nbsp;点融网</li>
+  <li><a href="http://www.miibeian.gov.cn/">沪ICP备14028311号</a></li>
+  <li>上海点荣金融信息服务有限责任公司</li>
+</ul>
+
+<div class="footer-authentication-info">
+  <a target="_blank" class="picp" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102002033" rel="nofollow"><span></span></a>
+  <a target="_blank" class="norton" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.dianrong.com&amp;lang=zh_cn" rel="nofollow"></a>
+  <a target="_blank" class="iac" href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&serial=9031000020160418194226000000627114-SAIC_SHOW_310000-20160812190229663070&signData=MEUCIH3dbhj+OSXYLIY3SfE2rs3WpZ8IqNBP/GXNMeTdPL0SAiEA51boZ4RqRdc9uwVD4t7TIOKl6kL7O99sBCs094n8WII=" rel="nofollow"></a>
+  <a target="_blank" class="verifyseal" href="https://ss.knet.cn/verifyseal.dll?sn=e15010631011557181nh4l000000&amp;ct=df&amp;a=1&amp;pa=0.6343199273105711">
+  </a>
+  <!--<a id="__szfw_logo__" class="szfw" href="https://search.szfw.org/cert/l/CX20150107006323006821" target="_blank"></a>
+  <script type="text/javascript">(function(){document.getElementById('__szfw_logo__').oncontextmenu = function(){return false;}})();</script>
+  <a target="_blank" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1062547634" class="itrust" rel="nofollow"></a>-->
+</div>
+</footer>
 </div>
 </body>
 </html>

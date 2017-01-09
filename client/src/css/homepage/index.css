@@ -1,4 +1,4 @@
-body {
+﻿body {
 	min-width: 1170px
 }
 
@@ -315,6 +315,269 @@ body {
 /*导航菜单选中时的背景色*/
 #index-footer,#index-header .header-nav li.active {
 	background-color: #E4E4E4
+}
+
+#index-footer .container {
+	width: 1140px!important
+}
+
+#index-footer a {
+	color: #999
+}
+
+#index-footer a:hover {
+	color: #666
+}
+
+#index-footer .footer-site-map {
+	padding: 40px 20px 0;
+	font-size: 16px
+}
+
+#index-footer .footer-site-map dl {
+	float: left;
+	width: 22%;
+	margin-bottom: 38px;
+	padding: 0
+}
+
+#index-footer .footer-site-map dl.policy {
+	width: 23%
+}
+
+#index-footer .footer-site-map dl.app-download {
+	width: 25%
+}
+
+#index-footer .footer-site-map dl.our-office {
+	width: 30%
+}
+
+#index-footer .footer-site-map dt {
+	margin-bottom: 30px;
+	line-height: 16px;
+	font-weight: 400;
+	color: #333
+}
+
+#index-footer .footer-site-map dd {
+	margin-bottom: 30px;
+	line-height: 16px;
+	color: #999
+}
+
+#index-footer .footer-site-map dd .android,#index-footer .footer-site-map dd .iPhone {
+	display: block;
+	width: 124px;
+	height: 41px;
+	border: 2px solid #00BC8D;
+	border-radius: 5px;
+	line-height: 38px;
+	font-size: 18px;
+	color: #00BC8D;
+	vertical-align: middle
+}
+
+#index-footer .footer-site-map dd .android:hover,#index-footer .footer-site-map dd .iPhone:hover {
+	border-color: #40cdaa;
+	color: #40cdaa
+}
+
+#index-footer .footer-site-map dd .index-icon-android,#index-footer .footer-site-map dd .index-icon-apple {
+	margin: 0 10px;
+	font-size: 24px;
+	vertical-align: -3px
+}
+
+#index-footer .footer-site-map .our-office {
+	padding-left: 40px
+}
+
+#index-footer .footer-site-map .our-office dt {
+	margin-bottom: 16px
+}
+
+#index-footer .footer-site-map .our-office dd {
+	display: block;
+	float: left;
+	margin: 0;
+	width: 25%;
+	font-size: 14px;
+	line-height: 1.5
+}
+
+#index-footer .footer-site-map .our-office dd a {
+	color: #00BC8D
+}
+
+#index-footer .footer-site-map .our-office .map {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 101px;
+	background: url(../images/public/home/footer-common-image-0816.png) -192px -354px no-repeat
+}
+
+#index-footer .footer-site-map .our-office .media {
+	margin-top: 15px;
+	width: 235px
+}
+
+#index-footer .footer-site-map .app-download dd {
+	margin-bottom: 10px
+}
+
+#index-footer .footer-site-map .app-download .footer-mobile,#index-footer .footer-site-map .app-download .footer-public {
+	margin-bottom: 20px
+}
+
+#index-footer .footer-site-map .app-download .download-link {
+	margin-left: 112px
+}
+
+#index-footer .footer-site-map .app-download .footer-public {
+	margin-top: -82px
+}
+
+#index-footer .footer-site-map .app-download .public-code {
+	width: 92px;
+	height: 92px;
+	background: url(../images/public/home/footer-public-code.png) no-repeat
+}
+
+#index-footer .footer-site-map .qr-code {
+	position: relative;
+	top: -102px;
+	left: 0;
+	display: block;
+	width: 92px;
+	height: 92px;
+	background: url(../images/public/home/footer-common-image-0816.png) no-repeat
+}
+
+#index-footer .footer-friend-link {
+	margin-bottom: 34px;
+	padding: 10px 20px 0;
+	border-top: 1px solid #CCC;
+	font-size: 13px
+}
+
+#index-footer .footer-friend-link dt {
+	display: inline-block;
+	margin-right: 14px;
+	font-weight: 400;
+	color: #999
+}
+
+#index-footer .footer-friend-link dt:after {
+	content: ":"
+}
+
+#index-footer .footer-friend-link dd {
+	display: inline-block;
+	line-height: 16px
+}
+
+#index-footer .footer-friend-link dd:after {
+	content: "|";
+	color: #bbb
+}
+
+#index-footer .footer-friend-link dd:last-child:after {
+	content: "\20"
+}
+
+#index-footer .footer-friend-link a {
+	display: inline-block;
+	padding: 0 10px;
+	color: #bbb
+}
+
+#index-footer .footer-copyright {
+	margin-bottom: 4px;
+	padding-left: 0;
+	text-align: center;
+	font-size: 14px;
+	color: #999
+}
+
+#index-footer .footer-copyright li {
+	display: inline-block;
+	margin-left: 10px;
+	list-style: none
+}
+
+#index-footer .footer-copyright li:before {
+	content: "|";
+	margin-right: 10px
+}
+
+#index-footer .footer-copyright li:first-child:before {
+	content: "\20"
+}
+
+#index-footer .footer-copyright li a:active,#index-footer .footer-copyright li a:hover,#index-footer .footer-copyright li a:link,#index-footer .footer-copyright li a:visited {
+	color: #9f9f9f
+}
+
+#index-footer .footer-authentication-info {
+	text-align: center
+}
+
+#index-footer .footer-authentication-info a {
+	display: inline-block;
+	/*background-image: url(/static/images/public/home/footer-common-image-0816.png)*/
+}
+
+#index-footer .footer-authentication-info .picp {
+	position: relative;
+	width: 150px;
+	height: 52px;
+	margin: 9px 8px;
+	background-position: -230px 0
+}
+
+#index-footer .footer-authentication-info .picp span {
+	position: absolute;
+	right: 3px;
+	bottom: 0;
+	font-size: 12px;
+	color: #000
+}
+
+#index-footer .footer-authentication-info .norton {
+	width: 120px;
+	height: 70px;
+	margin: 0 8px;
+	background-position: 0 -173px
+}
+
+#index-footer .footer-authentication-info .iac,#index-footer .footer-authentication-info .szfw,#index-footer .footer-authentication-info .verifyseal {
+	margin: 11px 8px 12px
+}
+
+#index-footer .footer-authentication-info .iac {
+	width: 126px;
+	height: 47px;
+	background-position: -254px -154px
+}
+
+#index-footer .footer-authentication-info .verifyseal {
+	width: 128px;
+	height: 47px;
+	background-position: -252px -82px
+}
+
+#index-footer .footer-authentication-info .szfw {
+	width: 132px;
+	height: 47px;
+	background-position: -145px -242px
+}
+
+#index-footer .footer-authentication-info .itrust {
+	width: 60px;
+	height: 58px;
+	margin: 6px 8px;
+	background-position: -287px -295px
 }
 
 /*首页内容样式*/
