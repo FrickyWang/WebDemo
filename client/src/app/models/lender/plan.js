@@ -17,19 +17,21 @@ define(["models/lib/resource", "models/lib/request"], function(Resource) {
 	
 	// ALL查询
 	plan.prototype.queryAll = function(params) {
+		var me = this;
 		return this.request.get(this.dbUrl + "/feapi/plans", params).then(function(response) {
 			return response;
 		}, function(response) {
-			return this.$q.reject(response);
+			return me.$q.reject(response);
 		});
 	};
 	
 	// One查询
 	plan.prototype.queryOne = function(subUrl, params) {
+		var me = this;
 		return this.request.get("/feapi/plans/" + subUrl, params).then(function(response) {
 			return response;
 		}, function(response) {
-			return this.$q.reject(response);
+			return me.$q.reject(response);
 		});
 	};
 	// Faqs查询
@@ -38,10 +40,11 @@ define(["models/lib/resource", "models/lib/request"], function(Resource) {
 	};
 	// GradeRates描述查询
 	plan.prototype.getGradeRatesDesc = function() {
+		var me = this;
 		return this.request.get("/nb/api/public/descriptions?type=profit").then(function(response) {
 			return response;
 		}, function(response) {
-			return this.$q.reject(response);
+			return me.$q.reject(response);
 		});
 	};
 	plan.prototype.queryInvestments = function(subUrl, params) {

@@ -210,7 +210,7 @@
         options: {
           banner: "<%= banner %>"
         },
-        src:['src/app/temp/index.js','src/app/temp/directives/ui/webDemo-banner.js','src/app/temp/controllers/**/*.js'],
+        src:['src/app/temp/index.js','src/app/temp/directives/ui/*.js','src/app/temp/controllers/**/*.js'],
         dest:'src/app/temp/index.js'
       }
     },

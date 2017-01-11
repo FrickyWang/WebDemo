@@ -69,6 +69,8 @@
   </style>
   </head>
   <body ng-controller="MainCtrl">
+  <div webdemo-notice></div>
+  
   <div class="wrapper">
   <header id="index-header" class="clearfix" ng-class="{true : 'logged', false : 'no-logged'}[isAuthenticated]" ng-controller="HeaderCtrl">
       <div ng-include="'templet/header.tpl.html'"></div>

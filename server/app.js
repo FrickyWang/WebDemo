@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.get('/recipe/:id', routes.detail);
 // 路由判断
 app.use(function(req, res, next) {
-	//log.writeDebug(req.originalUrl);
+	// log.writeDebug(req.url);
 	routeIndex.parseUrl(req.originalUrl, req, res)
 });
 

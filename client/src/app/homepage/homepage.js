@@ -60,7 +60,7 @@
         
         // 查询产品
 		Plan.queryAll().then(function(responseData) {
-			sucFunc(responseData);
+			sucFunc(responseData.content.list);
 		});
 	}]);
 });
